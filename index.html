@@ -246,7 +246,7 @@
       </nav>
       <!-- Extra Mobile Links -->
       <ul
-        class="container justify-center hidden gap-5 pt-2 pb-4 border-b max-xl:flex body border-b-main/10"
+        class="container justify-center hidden gap-5 pt-2 pb-4 border-b max-xl:flex body *:hover:text-main *:transition-all *:duration-200 border-b-main/10"
       >
         <li>
           <a
@@ -282,7 +282,9 @@
       </ul>
     </header>
     <!-- Main Content -->
-    <main class="flex flex-col gap-20 mt-[129px] md:mt-[164px] xl:mt-[113px]">
+    <main
+      class="flex flex-col gap-20 pb-10 mt-[129px] md:mt-[164px] xl:mt-[113px]"
+    >
       <!-- Hero Section -->
       <section class="container flex flex-col gap-10 py-8">
         <div class="flex items-center justify-center gap-10">
@@ -552,6 +554,170 @@
                 <span>Accessible</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- Payment Methods Section -->
+      <section class="container">
+        <header class="space-y-4 text-center max-w-[768px] mx-auto">
+          <h2 class="h2">Payment Methods</h2>
+          <p class="h4">
+            Secure and flexible payment options to facilitate your international
+            transactions
+          </p>
+        </header>
+        <div
+          class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:transition-all *:duration-300 *:hover:border-main *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-5 *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs *:[&_>_.tags_li_p]:text-center *:[&_>_.tags_li_p]:max-w-[115px] *:[&_>_.icons]:text-3xl *:[&_>_.icons]:text-silver *:[&_>_.icons]:flex *:[&_>_.icons]:items-center *:[&_>_.icons]:gap-2"
+        >
+          <div>
+            <div class="icon-box"><i class="fa-solid fa-credit-card"></i></div>
+            <hgroup class="space-y-2">
+              <h4 class="font-medium h4">Credit & Debit Cards</h4>
+              <p>
+                Accept all major credit and debit cards with secure processing
+                and fraud protection.
+              </p>
+            </hgroup>
+            <div class="icons">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-cc-amex"></i>
+            </div>
+            <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+          </div>
+          <div>
+            <div class="icon-box">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <hgroup class="space-y-2">
+              <h4 class="font-medium h4">Bank Transfer</h4>
+              <p>
+                Secure direct bank transfers with international support and
+                competitive exchange rates.
+              </p>
+            </hgroup>
+            <div class="icons">
+              <i class="fa-solid fa-money-bill-transfer"></i>
+              <i class="fa-solid fa-money-check-dollar"></i>
+            </div>
+            <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+          </div>
+          <div>
+            <div class="icon-box">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <hgroup class="space-y-2">
+              <h4 class="font-medium h4">Installments</h4>
+              <p>
+                Flexible payment plans with installment options to manage cash
+                flow for larger orders.
+              </p>
+            </hgroup>
+            <div class="icons">
+              <i class="fa-solid fa-clock"></i>
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            class="relative px-6 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+          >
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./pages/payment.html"
+              class="relative"
+              >Learn More About Payment Methods</a
+            >
+          </button>
+        </div>
+      </section>
+      <!-- Company Profiles Section -->
+      <section class="container">
+        <header class="space-y-4 text-center max-w-[768px] mx-auto">
+          <h2 class="h2">Company Profile</h2>
+          <p class="h4">
+            Download our detailed company profiles to learn more about our
+            operations across different regions
+          </p>
+        </header>
+        <div
+          class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:border-main/10 *:transition-all *:duration-300 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-4 *:[&_>_.card-header]:flex *:[&_>_.card-header]:items-center *:[&_>_.card-header]:gap-3 *:[&_>_.card-header_img]:size-12"
+        >
+          <div>
+            <div class="card-header">
+              <img src="./assets/icons/uae.png" alt="" />
+              <h4 class="font-medium h4">UAE Profile</h4>
+            </div>
+            <p>
+              Our comprehensive operations in Egypt, covering North African
+              markets with specialized trade solutions.
+            </p>
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./pages/payment.html"
+              class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+            >
+              <span class="relative">Download PDF</span>
+              <i
+                class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+              >
+              </i>
+            </a>
+          </div>
+          <div>
+            <div class="card-header">
+              <img src="./assets/icons/turkey.png" alt="" />
+              <h4 class="font-medium h4">Turkey Profile</h4>
+            </div>
+            <p>
+              Our comprehensive operations in Egypt, covering North African
+              markets with specialized trade solutions.
+            </p>
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./pages/payment.html"
+              class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+            >
+              <span class="relative">Download PDF</span>
+              <i
+                class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+              >
+              </i>
+            </a>
+          </div>
+
+          <div>
+            <div class="card-header">
+              <img src="./assets/icons/egypt.png" alt="" />
+              <h4 class="font-medium h4">Egypt Profile</h4>
+            </div>
+            <p>
+              Our comprehensive operations in Egypt, covering North African
+              markets with specialized trade solutions.
+            </p>
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./pages/payment.html"
+              class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+            >
+              <span class="relative">Download PDF</span>
+              <i
+                class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+              >
+              </i>
+            </a>
           </div>
         </div>
       </section>
