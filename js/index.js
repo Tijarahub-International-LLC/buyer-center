@@ -45,3 +45,23 @@ document.body.addEventListener("click", (e) => {
 
 
 langToggle.addEventListener("click", handleLangOptions)
+
+
+
+// FAQs Toggler
+const toggleAnswer = () => {
+  const button = document.querySelector(".toggleAnswer");
+  const answer = button.parentElement.nextElementSibling
+  const icon = button.querySelector("i");
+  if (answer.style.maxHeight) {
+    answer.style.maxHeight = null;
+    icon.classList.remove("rotate-180")
+    answer.classList.remove("border-t")
+  } else {
+    answer.style.maxHeight = `${answer.scrollHeight}px`;
+    icon.classList.add("rotate-180")
+    answer.classList.add("border-t")
+  }
+}
+
+document.querySelector(".toggleAnswer").addEventListener("click", toggleAnswer);
