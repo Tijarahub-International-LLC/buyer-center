@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+    --color-main: #F05D43;
+    --color-silver: #4B5563;
+    --color-night: #121212;
+    --color-info: #4C9CFF;
+    --color-success: #6CE27E;
+    --color-warning: #FF9A47;
+  /* Typography */
+    --font-inter: "Inter", sans-serif;
+    --font-arabic: "IBM Plex Sans Arabic", sans-serif;
+}
+
+
+
+/* Hover in Mobile & Tablet Screens */
+@custom-variant hover (&:hover);
+
+/* Custom Container */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1200px;
+}
+
+
+/* Typography */
+.h1 {
+  @apply text-[38px] leading-[40px] md:text-[44px] md:leading-[46px] lg:text-[60px] lg:leading-[66px] font-black;
+}
+.h2 {
+  @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px] font-[700];
+}
+.h3 {
+  @apply text-[28px] leading-[30px] md:text-[32px] md:leading-[34px];
+}
+.h4 {
+  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px];
+}
+.body {
+  @apply text-[16px] md:text-[18px] leading-[1.5];
+}
+
+
+body {
+  @apply overflow-x-hidden;
+}
+
+button {
+  @apply cursor-pointer
+}
+
+.active-menu {
+  @apply h-screen opacity-100;
+}
+
+
