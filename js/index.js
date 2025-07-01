@@ -5,11 +5,16 @@ const langMenu = document.querySelector("#lang-menu");
 const menu = document.querySelector('.menu');
 const close = document.querySelector('.close');
 const burgerIcon = document.querySelector("header .burger-icon");
+const pageHeader = document.querySelector("#page-header");
+const playVideo = document.querySelector("#playVideo");
+const closeVideo = document.querySelector("#closeVideo");
+const videoContainer = document.querySelector("#videoContainer");
 
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
-  document?.getElementById("page-header").classList.toggle("overflow-hidden")
+  pageHeader.classList.toggle("overflow-hidden");
+  document.querySelector("#navlinks").classList.add("text-white");
   menu.classList.remove('-z-10');
   if (!menu.classList.contains("z-10")) {
     menu.classList.add('z-10');
@@ -19,7 +24,8 @@ burgerIcon?.addEventListener('click', () => {
 
 close?.addEventListener('click', () => {
   menu.classList.remove("z-10");
-  document?.getElementById("page-header").classList.toggle("overflow-hidden")
+  pageHeader.classList.toggle("overflow-hidden");
+  document.querySelector("#navlinks").classList.remove("text-white");
   if (!menu.classList.contains("-z-10")) {
     menu.classList.add("-z-10");
   }
@@ -27,25 +33,59 @@ close?.addEventListener('click', () => {
   document.body.style.overflow = "auto"
 })
 
+// Scroll Toggle Navbar Background
+function toggleHeaderBackground() {
+  let headerHeight = document.querySelector("#hero").scrollHeight
+
+
+  if (scrollY > headerHeight) {
+    pageHeader.classList.remove("text-white");
+    pageHeader.classList.add("text-night");
+    pageHeader.classList.add("bg-white");
+    pageHeader.classList.add("border-b");
+    pageHeader.classList.add("border-main/10");
+
+  } else {
+    pageHeader.classList.add("text-white");
+    pageHeader.classList.remove("text-night");
+    pageHeader.classList.remove("bg-white");
+    pageHeader.classList.remove("border-b");
+    pageHeader.classList.remove("border-main/10");
+  }
+}
+
+window.addEventListener("load", toggleHeaderBackground)
+window.addEventListener("scroll", toggleHeaderBackground)
+
+
 
 // Handle the lang options toggle
 const handleLangOptions = () => {
   langMenu.classList.toggle("opacity-0")
   langMenu.classList.toggle("flex");
   langMenu.classList.toggle("hidden")
-  document.getElementById("page-header").classList.toggle("overflow-hidden")
+  pageHeader.classList.toggle("overflow-hidden")
 }
 
-//Handle Click Outside
-document.body.addEventListener("click", (e) => {
-  if (e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
-    if (!langMenu.classList.contains("opacity-0")) {
-      handleLangOptions()
-    }
-  }
-})
+
 // Fire Toggling Function
 langToggle.addEventListener("click", handleLangOptions)
+
+
+//Video Toggle
+
+playVideo.addEventListener("click", () => {
+  videoContainer.classList.toggle("hidden");
+  videoContainer.classList.toggle("flex");
+  document.body.classList.toggle("overflow-y-hidden")
+})
+
+closeVideo.addEventListener("click", () => {
+  videoContainer.classList.toggle("hidden");
+  videoContainer.classList.toggle("flex");
+  document.body.classList.toggle("overflow-y-hidden");
+  videoContainer.querySelector("video").pause();
+})
 
 
 // FAQs Toggler
@@ -146,5 +186,16 @@ document.getElementById("search").addEventListener("keyup", (e) => {
     displayFaqs(initialFAQs)
   } else {
     displayFaqs(filterdData);
+  }
+})
+
+
+
+//Handle Click Outside
+document.body.addEventListener("click", (e) => {
+  if (e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
+    if (!langMenu.classList.contains("opacity-0")) {
+      handleLangOptions()
+    }
   }
 })

@@ -39,7 +39,7 @@
   @apply text-[28px] leading-[30px] md:text-[32px] md:leading-[34px];
 }
 .h4 {
-  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px];
+  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[28px];
 }
 .body {
   @apply text-[16px] md:text-[18px] leading-[1.5];
