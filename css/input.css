@@ -9,6 +9,7 @@
     --color-info: #004B90;
     --color-success: #24770C;
     --color-warning: #D0870A;
+    --color-section: #F9FAFB;
   /* Typography */
     --font-inter: "Inter", sans-serif;
     --font-arabic: "IBM Plex Sans Arabic", sans-serif;
@@ -44,6 +45,9 @@
   @apply text-[16px] md:text-[18px] leading-[1.5];
 }
 
+html {
+  @apply scroll-smooth
+}
 
 body {
   @apply overflow-x-hidden;
