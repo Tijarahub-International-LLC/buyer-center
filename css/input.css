@@ -46,7 +46,19 @@
 }
 
 html {
-  @apply scroll-smooth
+  @apply scroll-smooth scroll-p-8;
+}
+
+::-webkit-scrollbar {
+  @apply w-[12px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply  bg-main;
 }
 
 body {

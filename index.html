@@ -29,6 +29,11 @@
     />
     <!-- CSS Files -->
     <link href="./css/all.min.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link href="./css/output.css" rel="stylesheet" />
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -117,7 +122,7 @@
     <!-- Header -->
     <header
       id="page-header"
-      class="fixed top-0 z-50 w-full overflow-hidden backdrop-blur-xs text-white start-0"
+      class="fixed top-0 z-50 w-full overflow-hidden text-white backdrop-blur-xs start-0"
     >
       <nav
         class="flex px-6 md:px-16 py-4 md:py-14 justify-between items-center h-[80px]"
@@ -285,7 +290,7 @@
     <!-- Video -->
     <div
       id="videoContainer"
-      class="hidden absolute top-0 z-50 backdrop-blur-xs size-full items-center justify-center"
+      class="absolute top-0 z-50 items-center justify-center hidden backdrop-blur-xs size-full"
     >
       <div class="relative aspect-video w-[80%]">
         <button
@@ -293,7 +298,7 @@
           class="text-white transition-all hover:text-main"
         >
           <span class="absolute -top-10 lg:top-4 end-0"
-            ><i class="fa-solid fa-xmark text-5xl"></i
+            ><i class="text-5xl fa-solid fa-xmark"></i
           ></span>
         </button>
         <video controls class="xl:w-[80%] mx-auto rounded-lg">
@@ -302,9 +307,7 @@
       </div>
     </div>
     <!-- Main Content -->
-    <main
-      class="flex relative flex-col gap-20 *:even:bg-section *:py-12 *:md:py-16"
-    >
+    <main>
       <!-- Video -->
 
       <!-- Hero Section -->
@@ -312,16 +315,16 @@
         id="hero"
         class="relative pt-20 flex items-center text-center justify-center min-h-screen bg-[url(../assets/background.jpg)] bg-no-repeat bg-cover bg-center"
       >
-        <div class="absolute size-full top-0 start-0 bg-black/70"></div>
+        <div class="absolute top-0 size-full start-0 bg-black/70"></div>
         <div class="relative h-full">
           <div class="container flex-1">
             <div class="flex items-center justify-center gap-10">
               <div
-                class="flex text-white flex-col justify-center w-full gap-8 max-xl:items-center"
+                class="flex flex-col justify-center w-full gap-8 text-white max-xl:items-center"
               >
                 <button
                   id="playVideo"
-                  class="size-32 mx-auto flex items-center justify-center rounded-full text-white/70 text-9xl scale-100 hover:scale-110 hover:bg-main transition-all duration-700 hover:text-white hover:rotate-[120deg]"
+                  class="size-32 mx-auto outline-none flex items-center justify-center rounded-full text-white/70 text-9xl scale-100 hover:scale-110 hover:bg-main transition-all duration-700 hover:text-white hover:rotate-[120deg]"
                 >
                   <i class="fa-regular fa-circle-play"></i>
                 </button>
@@ -336,12 +339,12 @@
                     textiles, electronics, and more.
                   </p>
                 </div>
-                <div class="flex items-center gap-5 justify-center">
+                <div class="flex items-center justify-center gap-5">
                   <a
                     rel="noreferrer noopener"
                     target="_blank"
                     href="https://rfq-iframe.tijarahub.com/registration/form/"
-                    class="relative h4 px-16 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+                    class="relative px-16 py-4 overflow-hidden text-white transition-all border rounded-lg h4 bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
                     ><span class="relative">Get in Touch</span></a
                   >
                 </div>
@@ -350,562 +353,995 @@
           </div>
         </div>
       </section>
-      <div class="bg-main py-12">
+      <!-- Insights -->
+      <section class="py-12 bg-main">
         <div
           class="container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 *:flex *:flex-col *:gap-2.5 text-center *:[&_>_h4]:text-white *:[&_>_p]:text-white *:[&_>_h4]:font-bold"
         >
-          <div>
-            <h4 class="font-bold h2">+9.5k</h4>
+          <div
+            class="transition-all duration-700 translate-y-5 opacity-0 insights-box"
+          >
+            <h4 class="font-bold insights-num h2" data-target="9500">+9.5k</h4>
             <p class="body">Wholesale buyers</p>
           </div>
-          <div>
-            <h4 class="font-bold h2 text-main">+90K</h4>
+          <div
+            class="transition-all duration-700 translate-y-5 opacity-0 insights-box"
+          >
+            <h4 class="font-bold insights-num h2 text-main" data-target="90000">
+              +90K
+            </h4>
             <p class="body">Monthly Visitors</p>
           </div>
-          <div>
-            <h4 class="font-bold h2 text-main">+4.5K</h4>
+          <div
+            class="transition-all duration-700 translate-y-5 opacity-0 insights-box"
+          >
+            <h4 class="font-bold insights-num h2 text-main" data-target="4500">
+              +4.5K
+            </h4>
             <p class="body">Deals Facilitated</p>
           </div>
-          <div>
-            <h4 class="font-bold h2 text-main">+1.2k</h4>
+          <div
+            class="transition-all duration-700 translate-y-5 opacity-0 insights-box"
+          >
+            <h4 class="font-bold insights-num h2 text-main" data-target="1200">
+              +1.2k
+            </h4>
             <p class="body">Verified Suppliers</p>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- Nested Main Content -->
+      <div
+        class="flex relative flex-col gap-20 *:even:bg-section *:py-12 *:md:py-16"
+      >
+        <!-- Services Slider -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Our Solutions</h2>
+              <p class="h4">
+                Explore a range of expert services tailored to meet your needs,
+                from cutting-edge solutions to reliable support, We are
+                committed to delivering excellence and enhancing B2B online
+                trading.
+              </p>
+            </header>
+            <div class="my-7 md:my-12 swiper servicesSwiper">
+              <div
+                class="swiper-wrapper text-center *:[&_>_.icon-box]:mx-auto *:[&_>_.icon-box]:mb-5 *:[&_>_p]:mb-5 *:!w-[420px] *:bg-white"
+              >
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <h4 class="font-medium h4">Product Search</h4>
+                  <p>
+                    Find the right products from thousands of suppliers across
+                    multiple markets with our advanced search tools.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <h4 class="font-medium h4">Secure Payment</h4>
+                  <p>
+                    Transact with confidence using our secure payment gateway
+                    with fraud protection and escrow services.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                  </div>
+                  <h4 class="font-medium h4">Quality Inspection</h4>
+                  <p>
+                    Ensure product quality with our professional inspection
+                    services before shipment approval.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-headset"></i>
+                  </div>
+                  <h4 class="font-medium h4">Follow-up & Support</h4>
+                  <p>
+                    Dedicated account managers and 24/7 support to assist with
+                    any issues throughout your trade journey.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <h4 class="font-medium h4">Supplier Verification</h4>
+                  <p>
+                    Work with verified suppliers that undergo strict vetting
+                    processes to ensure reliability and quality.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
+                >
+                  <div class="icon-box">
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                  <h4 class="font-medium h4">End-to-End Logistics</h4>
+                  <p>
+                    Complete logistics solutions from factory to destination
+                    including customs clearance and documentation.
+                  </p>
+                  <ul class="flex flex-wrap items-center gap-2 tags">
+                    <li>
+                      <p>Product</p>
+                    </li>
+                    <li>
+                      <p>Search</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <!-- Services Section -->
-      <section>
-        <div class="container">
-          <header class="space-y-4 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Our Solutions</h2>
-            <p class="h4">
-              Explore a range of expert services tailored to meet your needs,
-              from cutting-edge solutions to reliable support, We are committed
-              to delivering excellence and enhancing B2B online trading.
-            </p>
-          </header>
-          <div
-            class="my-7 md:my-12 grid grid-cols-1 group gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center *:border *:transition-all *:hover:scale-105 *:duration-300 *:hover:border-main *:hover:-translate-y-3 *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-3 *:items-center *:justify-center *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs"
-          >
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-              <h4 class="font-medium h4">Product Search</h4>
-              <p>
-                Find the right products from thousands of suppliers across
-                multiple markets with our advanced search tools.
+        <!-- Categories Section -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Categories</h2>
+              <p class="h4">
+                Our comprehensive logistics network at your service, offering
+                complete delivery solutions from door to door.
               </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <h4 class="font-medium h4">Secure Payment</h4>
-              <p>
-                Transact with confidence using our secure payment gateway with
-                fraud protection and escrow services.
-              </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-              </div>
-              <h4 class="font-medium h4">Quality Inspection</h4>
-              <p>
-                Ensure product quality with our professional inspection services
-                before shipment approval.
-              </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <h4 class="font-medium h4">Follow-up & Support</h4>
-              <p>
-                Dedicated account managers and 24/7 support to assist with any
-                issues throughout your trade journey.
-              </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-certificate"></i>
-              </div>
-              <h4 class="font-medium h4">Supplier Verification</h4>
-              <p>
-                Work with verified suppliers that undergo strict vetting
-                processes to ensure reliability and quality.
-              </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="icon-box">
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
-              <h4 class="font-medium h4">End-to-End Logistics</h4>
-              <p>
-                Complete logistics solutions from factory to destination
-                including customs clearance and documentation.
-              </p>
-              <ul class="flex flex-wrap items-center gap-2 tags">
-                <li>
-                  <p>Product</p>
-                </li>
-                <li>
-                  <p>Search</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Shipping Methods Section -->
-      <section>
-        <div class="container">
-          <header class="space-y-4 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Shipping Methods</h2>
-            <p class="h4">
-              Our comprehensive logistics network at your service, offering
-              complete delivery solutions from door to door.
-            </p>
-          </header>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 my-7 md:my-12 gap-5 *:overflow-hidden *:rounded-2xl *:shadow *:transition-all *:duration-300 *:border *:border-white *:[&_>_.content]:p-5 *:[&_>_.content_hgroup]:space-y-3 *:[&_>_.content_hgroup_p]:text-silver *:[&_>_.icon-box]:h-[176px] *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:text-6xl *:[&_>_.content_div]:mt-3 *:[&_>_.content_div_span]:py-2 *:[&_>_.content_div_span]:px-4 *:[&_>_.content_div_span]:rounded-full *:[&_>_.content_div_span]:text-xs *:hover:scale-105 *:[&:nth-child(1)]:hover:border-info *:[&:nth-child(2)]:hover:border-success *:[&:nth-child(3)]:hover:border-info *:[&:nth-child(4)]:hover:border-warning *:[&:nth-child(1)_>_.icon-box]:bg-info/10 *:[&:nth-child(1)_>_.icon-box]:text-info *:[&:nth-child(2)_>_.icon-box]:bg-success/10 *:[&:nth-child(2)_>_.icon-box]:text-success *:[&:nth-child(3)_>_.icon-box]:bg-info/10 *:[&:nth-child(3)_>_.icon-box]:text-info *:[&:nth-child(4)_>_.icon-box]:bg-warning/10 *:[&:nth-child(4)_>_.icon-box]:text-warning *:[&:nth-child(1)_>_.content_div_span]:bg-info/10 *:[&:nth-child(1)_>_.content_div_span]:text-info *:[&:nth-child(2)_>_.content_div_span]:bg-success/10 *:[&:nth-child(2)_>_.content_div_span]:text-success *:[&:nth-child(3)_>_.content_div_span]:bg-info/10 *:[&:nth-child(3)_>_.content_div_span]:text-info *:[&:nth-child(4)_>_.content_div_span]:bg-warning/10 *:[&:nth-child(4)_>_.content_div_span]:text-warning"
-          >
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-plane"></i>
-              </div>
-              <div class="content">
-                <hgroup>
-                  <h4 class="font-semibold h4">Express Air Freight</h4>
-                  <p>
-                    Fastest delivery option with 3- 5 day shipping to most
-                    global destinations.
-                  </p>
-                </hgroup>
-                <div>
-                  <span>Time-sensitive</span>
-                  <span>Door-to-door </span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-plane-departure"></i>
-              </div>
-              <div class="content">
-                <hgroup>
-                  <h4 class="font-semibold h4">Traditional Air Freight</h4>
-                  <p>
-                    Balanced option with 7-10 day delivery timeframe at
-                    competitive rates.
-                  </p>
-                </hgroup>
-                <div>
-                  <span>Cost-effective</span>
-                  <span>Reliable </span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-ship"></i>
-              </div>
-              <div class="content">
-                <hgroup>
-                  <h4 class="font-semibold h4">Sea Freight</h4>
-                  <p>
-                    Economical solution for large shipments with 20-45 day
-                    delivery times.
-                  </p>
-                </hgroup>
-                <div>
-                  <span>Bulk cargo</span>
-                  <span>Low cost</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-truck"></i>
-              </div>
-              <div class="content">
-                <hgroup>
-                  <h4 class="font-semibold h4">Land Freight</h4>
-                  <p>
-                    Ideal for regional trade with flexible scheduling and route
-                    options.
-                  </p>
-                </hgroup>
-                <div>
-                  <span>Flexible</span>
-                  <span>Accessible</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Our Logistics -->
-      <section>
-        <div class="container">
-          <div class="space-y-6 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Our logistics Integration</h2>
+            </header>
             <div
-              class="flex items-center justify-center flex-wrap gap-10 *:h-[30px] *:bg-cover"
+              style="--swiper-navigation-color: var(--color-main)"
+              class="!px-10 text-center swiper categoriesSwiper my-7 md:my-12"
             >
-              <img
-                role="img"
-                aria-label="UPS"
-                title="UPS"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/UPS.png?1723036541021"
-                alt="UPS"
-              />
-              <img
-                role="img"
-                aria-label="MCS"
-                title="MCS"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/MCS.png?1723036523615"
-                alt="MCS"
-              />
-              <img
-                role="img"
-                aria-label="DHL"
-                title="DHL"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/DHL.png?1723036480781"
-                alt="DHL"
-              />
-              <img
-                role="img"
-                aria-label="FedEx"
-                title="FedEx"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Fexed.png?1723036499115"
-                alt="FedEx"
-              />
-              <img
-                role="img"
-                aria-label="Hapag-Lioyd"
-                title="Hapag-Lioyd"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Hapag.png?1723036506675"
-                alt="Hapag-Lioyd"
-              />
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-base font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-next categoriesSwiper"></div>
+              <div class="swiper-button-prev categoriesSwiper"></div>
             </div>
           </div>
-          <div
-            class="grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-3 [&_img]:max-h-[300px] [&_img]:max-w-[300px] [&_img]:mx-auto [&_img]:bg-cover"
-          >
-            <div class="flex flex-col gap-2">
-              <img
-                role="img"
-                aria-label="Carton"
-                title="Carton"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Box.png?1723036465092"
-                alt="Carton"
-              />
-              <div class="space-y-2 text-center -mt-5">
-                <h3 class="h4 font-medium">Carton</h3>
-                <div>
-                  <p>Carton Dimensions & Weight</p>
-                  <p>To be defined...</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2">
-              <img
-                role="img"
-                aria-label="Pallet"
-                title="Pallet"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Pallet.png?1723036530650"
-                alt="Pallet"
-              />
-              <div class="space-y-2 text-center -mt-5">
-                <h3 class="h4 font-medium">Pallet</h3>
-                <div>
-                  <p>Euro Pallet Dimensions</p>
-                  <p>(W x L x H): 80x120X14.4 cm</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2">
-              <img
-                role="img"
-                aria-label="Container"
-                title="Container"
-                src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Container.png?1723036472274"
-                alt="Container"
-              />
+        </section>
 
-              <div class="space-y-2 text-center -mt-5">
-                <h3 class="h4 font-medium">Container</h3>
-                <div>
-                  <p>Container Types</p>
-                  <p>20 DC / 40 DC / 40 HC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Payment Methods Section -->
-      <section>
-        <div class="container">
-          <header class="space-y-4 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Payment Methods</h2>
-            <p class="h4">
-              Secure and flexible payment options to facilitate your
-              international transactions
-            </p>
-          </header>
-          <div
-            class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:transition-all *:duration-300 *:hover:border-main *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-5 *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs *:[&_>_.tags_li_p]:text-center *:[&_>_.tags_li_p]:max-w-[115px] *:[&_>_.icons]:text-3xl *:[&_>_.icons]:text-silver *:[&_>_.icons]:flex *:[&_>_.icons]:items-center *:[&_>_.icons]:gap-2"
-          >
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-credit-card"></i>
-              </div>
-              <hgroup class="space-y-2">
-                <h4 class="font-medium h4">Credit & Debit Cards</h4>
-                <p>
-                  Accept all major credit and debit cards with secure processing
-                  and fraud protection.
-                </p>
-              </hgroup>
-              <div class="icons">
-                <i class="fa-brands fa-cc-visa"></i>
-                <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-brands fa-cc-amex"></i>
-              </div>
-              <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
-            </div>
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-building-columns"></i>
-              </div>
-              <hgroup class="space-y-2">
-                <h4 class="font-medium h4">Bank Transfer</h4>
-                <p>
-                  Secure direct bank transfers with international support and
-                  competitive exchange rates.
-                </p>
-              </hgroup>
-              <div class="icons">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-                <i class="fa-solid fa-money-check-dollar"></i>
-              </div>
-              <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
-            </div>
-            <div>
-              <div class="icon-box">
-                <i class="fa-solid fa-calendar-days"></i>
-              </div>
-              <hgroup class="space-y-2">
-                <h4 class="font-medium h4">Installments</h4>
-                <p>
-                  Flexible payment plans with installment options to manage cash
-                  flow for larger orders.
-                </p>
-              </hgroup>
-              <div class="icons">
-                <i class="fa-solid fa-clock"></i>
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-              </div>
-              <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
-            </div>
-          </div>
-          <div class="text-center">
-            <button
-              class="relative px-6 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+        <!-- Services Section -->
+        <!-- <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Our Solutions</h2>
+              <p class="h4">
+                Explore a range of expert services tailored to meet your needs,
+                from cutting-edge solutions to reliable support, We are
+                committed to delivering excellence and enhancing B2B online
+                trading.
+              </p>
+            </header>
+            <div
+              class="my-7 md:my-12 grid grid-cols-1 group gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center *:border *:transition-all *:hover:scale-105 *:duration-300 *:hover:border-main *:hover:-translate-y-3 *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-3 *:items-center *:justify-center *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs"
             >
-              <a
-                rel="noreferrer noopener"
-                target="_self"
-                href="./pages/payment.html"
-                class="relative"
-                >Learn More About Payment Methods</a
-              >
-            </button>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h4 class="font-medium h4">Product Search</h4>
+                <p>
+                  Find the right products from thousands of suppliers across
+                  multiple markets with our advanced search tools.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="font-medium h4">Secure Payment</h4>
+                <p>
+                  Transact with confidence using our secure payment gateway with
+                  fraud protection and escrow services.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+                <h4 class="font-medium h4">Quality Inspection</h4>
+                <p>
+                  Ensure product quality with our professional inspection
+                  services before shipment approval.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4 class="font-medium h4">Follow-up & Support</h4>
+                <p>
+                  Dedicated account managers and 24/7 support to assist with any
+                  issues throughout your trade journey.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h4 class="font-medium h4">Supplier Verification</h4>
+                <p>
+                  Work with verified suppliers that undergo strict vetting
+                  processes to ensure reliability and quality.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h4 class="font-medium h4">End-to-End Logistics</h4>
+                <p>
+                  Complete logistics solutions from factory to destination
+                  including customs clearance and documentation.
+                </p>
+                <ul class="flex flex-wrap items-center gap-2 tags">
+                  <li>
+                    <p>Product</p>
+                  </li>
+                  <li>
+                    <p>Search</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <!-- Company Profiles Section -->
-      <section>
-        <div class="container">
-          <header class="space-y-4 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Company Profile</h2>
-            <p class="h4">
-              Download our detailed company profiles to learn more about our
-              operations across different regions
-            </p>
-          </header>
-          <div
-            class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:border-main/10 *:transition-all *:duration-300 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-4 *:[&_>_.card-header]:flex *:[&_>_.card-header]:items-center *:[&_>_.card-header]:gap-3 *:[&_>_.card-header_img]:size-12"
-          >
-            <div>
-              <div class="card-header">
+        </section> -->
+        <!-- Shipping Methods Section -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Shipping Methods</h2>
+              <p class="h4">
+                Our comprehensive logistics network at your service, offering
+                complete delivery solutions from door to door.
+              </p>
+            </header>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 my-7 md:my-12 gap-5 *:overflow-hidden *:rounded-2xl *:shadow *:transition-all *:duration-300 *:border *:border-white *:[&_>_.content]:p-5 *:[&_>_.content_hgroup]:space-y-3 *:[&_>_.content_hgroup_p]:text-silver *:[&_>_.icon-box]:h-[176px] *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:text-6xl *:[&_>_.content_div]:mt-3 *:[&_>_.content_div_span]:py-2 *:[&_>_.content_div_span]:px-4 *:[&_>_.content_div_span]:rounded-full *:[&_>_.content_div_span]:text-xs *:hover:scale-105 *:[&:nth-child(1)]:hover:border-info *:[&:nth-child(2)]:hover:border-success *:[&:nth-child(3)]:hover:border-info *:[&:nth-child(4)]:hover:border-warning *:[&:nth-child(1)_>_.icon-box]:bg-info/10 *:[&:nth-child(1)_>_.icon-box]:text-info *:[&:nth-child(2)_>_.icon-box]:bg-success/10 *:[&:nth-child(2)_>_.icon-box]:text-success *:[&:nth-child(3)_>_.icon-box]:bg-info/10 *:[&:nth-child(3)_>_.icon-box]:text-info *:[&:nth-child(4)_>_.icon-box]:bg-warning/10 *:[&:nth-child(4)_>_.icon-box]:text-warning *:[&:nth-child(1)_>_.content_div_span]:bg-info/10 *:[&:nth-child(1)_>_.content_div_span]:text-info *:[&:nth-child(2)_>_.content_div_span]:bg-success/10 *:[&:nth-child(2)_>_.content_div_span]:text-success *:[&:nth-child(3)_>_.content_div_span]:bg-info/10 *:[&:nth-child(3)_>_.content_div_span]:text-info *:[&:nth-child(4)_>_.content_div_span]:bg-warning/10 *:[&:nth-child(4)_>_.content_div_span]:text-warning"
+            >
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-plane"></i>
+                </div>
+                <div class="content">
+                  <hgroup>
+                    <h4 class="font-semibold h4">Express Air Freight</h4>
+                    <p>
+                      Fastest delivery option with 3- 5 day shipping to most
+                      global destinations.
+                    </p>
+                  </hgroup>
+                  <div>
+                    <span>Time-sensitive</span>
+                    <span>Door-to-door </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-plane-departure"></i>
+                </div>
+                <div class="content">
+                  <hgroup>
+                    <h4 class="font-semibold h4">Traditional Air Freight</h4>
+                    <p>
+                      Balanced option with 7-10 day delivery timeframe at
+                      competitive rates.
+                    </p>
+                  </hgroup>
+                  <div>
+                    <span>Cost-effective</span>
+                    <span>Reliable </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-ship"></i>
+                </div>
+                <div class="content">
+                  <hgroup>
+                    <h4 class="font-semibold h4">Sea Freight</h4>
+                    <p>
+                      Economical solution for large shipments with 20-45 day
+                      delivery times.
+                    </p>
+                  </hgroup>
+                  <div>
+                    <span>Bulk cargo</span>
+                    <span>Low cost</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-truck"></i>
+                </div>
+                <div class="content">
+                  <hgroup>
+                    <h4 class="font-semibold h4">Land Freight</h4>
+                    <p>
+                      Ideal for regional trade with flexible scheduling and
+                      route options.
+                    </p>
+                  </hgroup>
+                  <div>
+                    <span>Flexible</span>
+                    <span>Accessible</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Our Logistics -->
+        <section>
+          <div class="container">
+            <div class="space-y-6 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Our logistics Integration</h2>
+              <div
+                class="flex items-center justify-center flex-wrap gap-10 *:h-[30px] *:bg-cover"
+              >
                 <img
                   role="img"
-                  aria-label="United Arab Emirates Flag"
-                  title="United Arab Emirates"
-                  src="./assets/icons/uae.png"
-                  alt="United Arab Emirates Flag"
+                  aria-label="UPS"
+                  title="UPS"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/UPS.png?1723036541021"
+                  alt="UPS"
                 />
-                <h4 class="font-medium h4">UAE Profile</h4>
-              </div>
-              <p>
-                Our comprehensive operations in Egypt, covering North African
-                markets with specialized trade solutions.
-              </p>
-              <a
-                rel="noreferrer noopener"
-                target="_self"
-                href="./pages/payment.html"
-                class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
-              >
-                <span class="relative">Download PDF</span>
-                <i
-                  class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
-                >
-                </i>
-              </a>
-            </div>
-            <div>
-              <div class="card-header">
                 <img
                   role="img"
-                  aria-label="Turkey Flag"
-                  title="Turkey"
-                  src="./assets/icons/turkey.png"
-                  alt="Turkey Flag"
+                  aria-label="MCS"
+                  title="MCS"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/MCS.png?1723036523615"
+                  alt="MCS"
                 />
-                <h4 class="font-medium h4">Turkey Profile</h4>
+                <img
+                  role="img"
+                  aria-label="DHL"
+                  title="DHL"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/DHL.png?1723036480781"
+                  alt="DHL"
+                />
+                <img
+                  role="img"
+                  aria-label="FedEx"
+                  title="FedEx"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Fexed.png?1723036499115"
+                  alt="FedEx"
+                />
+                <img
+                  role="img"
+                  aria-label="Hapag-Lioyd"
+                  title="Hapag-Lioyd"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Hapag.png?1723036506675"
+                  alt="Hapag-Lioyd"
+                />
               </div>
-              <p>
-                Our comprehensive operations in Egypt, covering North African
-                markets with specialized trade solutions.
-              </p>
-              <a
-                rel="noreferrer noopener"
-                target="_self"
-                href="./pages/payment.html"
-                class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
-              >
-                <span class="relative">Download PDF</span>
-                <i
-                  class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
-                >
-                </i>
-              </a>
             </div>
+            <div
+              class="grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-3 [&_img]:max-h-[300px] [&_img]:max-w-[300px] [&_img]:mx-auto [&_img]:bg-cover"
+            >
+              <div class="flex flex-col gap-2">
+                <img
+                  role="img"
+                  aria-label="Carton"
+                  title="Carton"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Box.png?1723036465092"
+                  alt="Carton"
+                />
+                <div class="-mt-5 space-y-2 text-center">
+                  <h3 class="font-medium h4">Carton</h3>
+                  <div>
+                    <p>Carton Dimensions & Weight</p>
+                    <p>To be defined...</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <img
+                  role="img"
+                  aria-label="Pallet"
+                  title="Pallet"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Pallet.png?1723036530650"
+                  alt="Pallet"
+                />
+                <div class="-mt-5 space-y-2 text-center">
+                  <h3 class="font-medium h4">Pallet</h3>
+                  <div>
+                    <p>Euro Pallet Dimensions</p>
+                    <p>(W x L x H): 80x120X14.4 cm</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <img
+                  role="img"
+                  aria-label="Container"
+                  title="Container"
+                  src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Logistics/Container.png?1723036472274"
+                  alt="Container"
+                />
 
-            <div>
-              <div class="card-header">
-                <img
-                  role="img"
-                  aria-label="Egypt Flag"
-                  title="Egypt"
-                  src="./assets/icons/egypt.png"
-                  alt="Egypt Flag"
-                />
-                <h4 class="font-medium h4">Egypt Profile</h4>
+                <div class="-mt-5 space-y-2 text-center">
+                  <h3 class="font-medium h4">Container</h3>
+                  <div>
+                    <p>Container Types</p>
+                    <p>20 DC / 40 DC / 40 HC</p>
+                  </div>
+                </div>
               </div>
-              <p>
-                Our comprehensive operations in Egypt, covering North African
-                markets with specialized trade solutions.
-              </p>
-              <a
-                rel="noreferrer noopener"
-                target="_self"
-                href="./pages/payment.html"
-                class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
-              >
-                <span class="relative">Download PDF</span>
-                <i
-                  class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
-                >
-                </i>
-              </a>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- Frequently Asked Questions Section -->
-      <section>
-        <div class="container">
-          <header class="space-y-4 text-center max-w-[768px] mx-auto">
-            <h2 class="h2">Frequently Asked Questions</h2>
-            <p class="h4">
-              Find quick answers to common questions about our platform and
-              services.
-            </p>
-          </header>
-          <form
-            id="faqs"
-            class="relative max-w-[768px] mx-auto mt-10 overflow-hidden"
-          >
-            <input
-              type="text"
-              name="search"
-              id="search"
-              class="w-full outline-none focus:border-main transition-all duration-300 px-4 py-3 border border-silver rounded-full focus:[&_+_button_i]:text-main"
-              placeholder="Search FAQs..."
-            />
-            <button class="absolute group top-0 h-full px-4 rounded-full end-0">
-              <i
-                class="transition-all text-silver search-icon duration-300 fa-solid fa-magnifying-glass"
-              ></i>
-            </button>
-          </form>
-          <div id="faqsContainer" class="mt-10"></div>
-        </div>
-      </section>
+        </section>
+        <!-- Payment Methods Section -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Payment Methods</h2>
+              <p class="h4">
+                Secure and flexible payment options to facilitate your
+                international transactions
+              </p>
+            </header>
+            <div
+              class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:transition-all *:duration-300 *:hover:border-main *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-5 *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs *:[&_>_.tags_li_p]:text-center *:[&_>_.tags_li_p]:max-w-[115px] *:[&_>_.icons]:text-3xl *:[&_>_.icons]:text-silver *:[&_>_.icons]:flex *:[&_>_.icons]:items-center *:[&_>_.icons]:gap-2"
+            >
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <hgroup class="space-y-2">
+                  <h4 class="font-medium h4">Credit & Debit Cards</h4>
+                  <p>
+                    Accept all major credit and debit cards with secure
+                    processing and fraud protection.
+                  </p>
+                </hgroup>
+                <div class="icons">
+                  <i class="fa-brands fa-cc-visa"></i>
+                  <i class="fa-brands fa-cc-mastercard"></i>
+                  <i class="fa-brands fa-cc-amex"></i>
+                </div>
+                <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+              </div>
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <hgroup class="space-y-2">
+                  <h4 class="font-medium h4">Bank Transfer</h4>
+                  <p>
+                    Secure direct bank transfers with international support and
+                    competitive exchange rates.
+                  </p>
+                </hgroup>
+                <div class="icons">
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                  <i class="fa-solid fa-money-check-dollar"></i>
+                </div>
+                <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+              </div>
+              <div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <hgroup class="space-y-2">
+                  <h4 class="font-medium h4">Installments</h4>
+                  <p>
+                    Flexible payment plans with installment options to manage
+                    cash flow for larger orders.
+                  </p>
+                </hgroup>
+                <div class="icons">
+                  <i class="fa-solid fa-clock"></i>
+                  <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <!-- <ul class="tags">
+              <li><p>test</p></li>
+            </ul> -->
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                class="relative px-6 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+              >
+                <a
+                  rel="noreferrer noopener"
+                  target="_self"
+                  href="./pages/payment.html"
+                  class="relative"
+                  >Learn More About Payment Methods</a
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Company Profiles Section -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Company Profile</h2>
+              <p class="h4">
+                Download our detailed company profiles to learn more about our
+                operations across different regions
+              </p>
+            </header>
+            <div
+              class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:border-main/10 *:transition-all *:duration-300 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-4 *:[&_>_.card-header]:flex *:[&_>_.card-header]:items-center *:[&_>_.card-header]:gap-3 *:[&_>_.card-header_i]:text-4xl *:[&_>_.card-header_i]:text-silver"
+            >
+              <div>
+                <div class="card-header">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <h4 class="font-medium h4">English Profile</h4>
+                </div>
+                <p>
+                  Our comprehensive operations in Egypt, covering North African
+                  markets with specialized trade solutions.
+                </p>
+                <a
+                  rel="noreferrer noopener"
+                  target="_self"
+                  href="./pages/payment.html"
+                  class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+                >
+                  <span class="relative">Download PDF</span>
+                  <i
+                    class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+                  >
+                  </i>
+                </a>
+              </div>
+              <div>
+                <div class="card-header">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <h4 class="font-medium h4">Turkey Profile</h4>
+                </div>
+                <p>
+                  Our comprehensive operations in Egypt, covering North African
+                  markets with specialized trade solutions.
+                </p>
+                <a
+                  rel="noreferrer noopener"
+                  target="_self"
+                  href="./pages/payment.html"
+                  class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+                >
+                  <span class="relative">Download PDF</span>
+                  <i
+                    class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+                  >
+                  </i>
+                </a>
+              </div>
+
+              <div>
+                <div class="card-header">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <h4 class="font-medium h4">Arabic Profile</h4>
+                </div>
+                <p>
+                  Our comprehensive operations in Egypt, covering North African
+                  markets with specialized trade solutions.
+                </p>
+                <a
+                  rel="noreferrer noopener"
+                  target="_self"
+                  href="./pages/payment.html"
+                  class="relative flex items-center justify-center gap-2 px-6 py-3 overflow-hidden transition-all bg-white border rounded-full group border-main text-main hover:before:w-full before:transition-all hover:text-white before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-main before:start-0 before:top-0"
+                >
+                  <span class="relative">Download PDF</span>
+                  <i
+                    class="text-2xl fa-solid fa-cloud-arrow-down group-hover:animate-bounce"
+                  >
+                  </i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Frequently Asked Questions Section -->
+        <section>
+          <div class="container">
+            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+              <h2 class="h2">Frequently Asked Questions</h2>
+              <p class="h4">
+                Find quick answers to common questions about our platform and
+                services.
+              </p>
+            </header>
+            <form
+              id="faqs"
+              class="relative max-w-[768px] mx-auto mt-10 overflow-hidden"
+            >
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="w-full outline-none focus:border-main transition-all duration-300 px-4 py-3 border border-silver rounded-full focus:[&_+_button_i]:text-main"
+                placeholder="Search FAQs..."
+              />
+              <button
+                class="absolute top-0 h-full px-4 rounded-full group end-0"
+              >
+                <i
+                  class="transition-all duration-300 text-silver search-icon fa-solid fa-magnifying-glass"
+                ></i>
+              </button>
+            </form>
+            <div id="faqsContainer" class="mt-10"></div>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js" type="module" defer></script>
   </body>
 </html>

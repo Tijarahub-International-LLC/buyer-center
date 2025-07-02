@@ -10,6 +10,8 @@ const playVideo = document.querySelector("#playVideo");
 const closeVideo = document.querySelector("#closeVideo");
 const videoContainer = document.querySelector("#videoContainer");
 
+
+let isVideoOpened = false;
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
@@ -38,7 +40,7 @@ function toggleHeaderBackground() {
   let headerHeight = document.querySelector("#hero").scrollHeight
 
 
-  if (scrollY > headerHeight) {
+  if (scrollY > headerHeight - 150) {
     pageHeader.classList.remove("text-white");
     pageHeader.classList.add("text-night");
     pageHeader.classList.add("bg-white");
@@ -53,7 +55,6 @@ function toggleHeaderBackground() {
     pageHeader.classList.remove("border-main/10");
   }
 }
-
 window.addEventListener("load", toggleHeaderBackground)
 window.addEventListener("scroll", toggleHeaderBackground)
 
@@ -66,26 +67,74 @@ const handleLangOptions = () => {
   langMenu.classList.toggle("hidden")
   pageHeader.classList.toggle("overflow-hidden")
 }
-
-
-// Fire Toggling Function
 langToggle.addEventListener("click", handleLangOptions)
 
-
-//Video Toggle
-
-playVideo.addEventListener("click", () => {
-  videoContainer.classList.toggle("hidden");
-  videoContainer.classList.toggle("flex");
-  document.body.classList.toggle("overflow-y-hidden")
-})
-
-closeVideo.addEventListener("click", () => {
+function toggleVideoModal() {
   videoContainer.classList.toggle("hidden");
   videoContainer.classList.toggle("flex");
   document.body.classList.toggle("overflow-y-hidden");
-  videoContainer.querySelector("video").pause();
+  isVideoOpened = !isVideoOpened;
+}
+//Video Toggle
+playVideo.addEventListener("click", toggleVideoModal)
+closeVideo.addEventListener("click", toggleVideoModal)
+
+document.addEventListener("keyup", (e) => {
+  if (e.code === "Escape") {
+    if (isVideoOpened) {
+      toggleVideoModal();
+    }
+  }
 })
+
+
+// Insights Counter 
+const insightsBoxes = document.querySelectorAll('.insights-box');
+const options = { threshold: 0.5 };
+
+const formatK = (num) => {
+  const value = num / 1000;
+  return value.toFixed(value % 1 === 0 ? 0 : 1) + 'K';
+};
+
+const animateCount = (el, target) => {
+  let start = 0;
+  const duration = 1500;
+  const frameRate = 1000 / 60;
+  const steps = duration / frameRate;
+  const increment = target / steps;
+
+  const update = () => {
+    start += increment;
+    if (start < target) {
+      el.textContent = formatK(start);
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = formatK(target);
+    }
+  };
+
+  requestAnimationFrame(update);
+};
+
+const observer = new IntersectionObserver((entries, obs) => {
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const box = entry.target;
+      box.classList.remove('opacity-0', 'translate-y-5');
+      box.classList.add('opacity-100', 'translate-y-0');
+
+      const numberEl = box.querySelector('.insights-num');
+      const target = parseInt(numberEl.dataset.target);
+      animateCount(numberEl, target);
+
+      obs.unobserve(box);
+    }
+  });
+}, options);
+
+insightsBoxes.forEach(box => observer.observe(box));
 
 
 // FAQs Toggler
@@ -193,9 +242,103 @@ document.getElementById("search").addEventListener("keyup", (e) => {
 
 //Handle Click Outside
 document.body.addEventListener("click", (e) => {
+  // Lang Menu
   if (e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
     if (!langMenu.classList.contains("opacity-0")) {
       handleLangOptions()
     }
   }
+
+  // Video Modal
+  if (isVideoOpened) {
+    if (e.target !== playVideo.querySelector("i")) {
+      if (e.target !== videoContainer.querySelector("video")) {
+        toggleVideoModal()
+      }
+    }
+  }
 })
+
+
+
+// Sliders
+new Swiper(".servicesSwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  initialSlide: 4,
+  loop: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 20,
+    stretch: 0,
+    depth: 320,
+    modifier: 1,
+    slideShadows: false,
+  },
+  pagination: false,
+});
+
+new Swiper(".categoriesSwiper", {
+  spaceBetween: 0,
+  freeMode: true,
+  pagination: false,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    620: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    },
+  }, navigation: {
+    nextEl: ".swiper-button-next.categoriesSwiper",
+    prevEl: ".swiper-button-prev.categoriesSwiper",
+  },
+});
+
+
+new Swiper(".categoriesSwiper2", {
+  spaceBetween: 0,
+  freeMode: true,
+  pagination: false,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    620: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    },
+  }, navigation: {
+    nextEl: ".swiper-button-next.categoriesSwiper2",
+    prevEl: ".swiper-button-prev.categoriesSwiper2",
+  },
+});
+
