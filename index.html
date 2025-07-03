@@ -308,12 +308,10 @@
     </div>
     <!-- Main Content -->
     <main>
-      <!-- Video -->
-
       <!-- Hero Section -->
       <section
         id="hero"
-        class="relative pt-20 flex items-center text-center justify-center min-h-screen bg-[url(../assets/background.jpg)] bg-no-repeat bg-cover bg-center"
+        class="relative pb-20 pt-40 md:py-20 flex items-center text-center justify-center min-h-screen bg-[url(../assets/background.jpg)] bg-no-repeat bg-cover bg-center"
       >
         <div class="absolute top-0 size-full start-0 bg-black/70"></div>
         <div class="relative h-full">
@@ -395,7 +393,7 @@
         class="flex relative flex-col gap-20 *:even:bg-section *:py-12 *:md:py-16"
       >
         <!-- Services Slider -->
-        <section>
+        <section class="mt-10">
           <div class="container">
             <header class="space-y-4 text-center max-w-[768px] mx-auto">
               <h2 class="h2">Our Solutions</h2>
@@ -406,129 +404,299 @@
                 trading.
               </p>
             </header>
-            <div class="my-7 md:my-12 swiper servicesSwiper">
+            <div class="!py-5 mt-5 swiper servicesSwiper">
               <div
-                class="swiper-wrapper text-center *:[&_>_.icon-box]:mx-auto *:[&_>_.icon-box]:mb-5 *:[&_>_p]:mb-5 *:!w-[420px] *:bg-white"
+                class="swiper-wrapper *:[&_>_.icon-box]:mx-auto *:[&_>_.icon-box]:mb-5 *:[&_>_p]:mb-5 *:lg:!w-[420px] *:bg-white"
               >
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-info/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-info h3"
+                    >
+                      Protection & <br />
+                      Quality Assurance
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-info end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">Product Search</h4>
-                  <p>
-                    Find the right products from thousands of suppliers across
-                    multiple markets with our advanced search tools.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      Supplier verification, pre-shipment inspections, and
+                      dispute resolution minimize trade risks and ensure product
+                      authenticity.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-info/20 text-info font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-shield-halved"></i>
+
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-main/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-main h3"
+                    >
+                      Seamless Payments <br />
+                      & Transactions
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-main end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">Secure Payment</h4>
-                  <p>
-                    Transact with confidence using our secure payment gateway
-                    with fraud protection and escrow services.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      Secure multi-currency payments, escrow protection, trade
+                      financing, and AI-driven fraud detection ensure smooth
+                      transactions.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-main/20 text-main font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-success/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-success h3"
+                    >
+                      Curated Supplier <br />
+                      Matches
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-success end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">Quality Inspection</h4>
-                  <p>
-                    Ensure product quality with our professional inspection
-                    services before shipment approval.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      Dedicated account managers, 24/7 customer service, and
+                      real-time shipment tracking provide full order-to-delivery
+                      assistance.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-success/20 text-success font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-headset"></i>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-warning/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-warning h3"
+                    >
+                      Logistics <br />
+                      Support
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-warning end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">Follow-up & Support</h4>
-                  <p>
-                    Dedicated account managers and 24/7 support to assist with
-                    any issues throughout your trade journey.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      simple and safe door-to-door logistics solution. Through
+                      partnerships with international shipping, insurance, and
+                      quality assurance companies.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-warning/20 text-warning font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-certificate"></i>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-info/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-info h3"
+                    >
+                      End-to-End <br />
+                      Order Cycle
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-info end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">Supplier Verification</h4>
-                  <p>
-                    Work with verified suppliers that undergo strict vetting
-                    processes to ensure reliability and quality.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      From sourcing to delivery, TijaraHub optimizes procurement
+                      with RFQs, sample requests, and real-time supply chain
+                      tracking.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-info/20 text-info font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  class="swiper-slide border transition-all duration-300 border-main/10 rounded-xl overflow-hidden p-5 shadow flex flex-col gap-3 items-center justify-center [&_>_.icon-box]:bg-main/10 [&_>_.icon-box]:text-main [&_>_.icon-box]:!size-16 [&_>_.icon-box]:text-2xl [&_>_.icon-box]:flex [&_>_.icon-box]:items-center [&_>_.icon-box]:justify-center [&_>_.icon-box]:rounded-full [&_>_.tags_li_p]:bg-silver/10 [&_>_.tags_li_p]:px-2 [&_>_.tags_li_p]:py-1.5 [&_>_.tags_li_p]:rounded-lg [&_>_.tags_li_p]:text-xs"
-                >
-                  <div class="icon-box">
-                    <i class="fa-solid fa-truck-fast"></i>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-main/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-main h3"
+                    >
+                      Dedicated Customer <br />
+                      Service
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-main end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
                   </div>
-                  <h4 class="font-medium h4">End-to-End Logistics</h4>
-                  <p>
-                    Complete logistics solutions from factory to destination
-                    including customs clearance and documentation.
-                  </p>
-                  <ul class="flex flex-wrap items-center gap-2 tags">
-                    <li>
-                      <p>Product</p>
-                    </li>
-                    <li>
-                      <p>Search</p>
-                    </li>
-                  </ul>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      Dedicated account managers, 24/7 customer service, and
+                      real-time shipment tracking provide full order-to-delivery
+                      assistance.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-main/20 text-main font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-success/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-success h3"
+                    >
+                      Automated <br />
+                      RFQ Tool
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-success end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
+                  </div>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      Real-Time Calculator feature and proposal with product
+                      pictures in just one click,enabling buyers to estimate
+                      total product costs, including shipping, customs,
+                      clearance fees, and local delivery charges.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-success/20 text-success font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="overflow-hidden shadow swiper-slide rounded-xl">
+                  <div class="card-header relative h-[150px] bg-warning/20">
+                    <div
+                      class="absolute size-full bg-center bg-cover bg-no-repeat bg-[url(../assets/icons/svgs/bg-01.svg)] opacity-25"
+                    ></div>
+                    <h4
+                      class="absolute font-bold -translate-y-1/2 start-8 top-1/2 text-start text-warning h3"
+                    >
+                      Private Label <br />
+                      Solutions
+                    </h4>
+                    <div
+                      class="absolute bottom-0 flex items-center justify-center text-4xl translate-y-1/2 bg-white rounded-full shadow text-warning end-8 size-20 icon-box"
+                    >
+                      <i class="fa-solid fa-certificate"></i>
+                    </div>
+                  </div>
+
+                  <div class="p-8 pt-14 card-content">
+                    <p class="text-silver">
+                      TijaraHub helps businesses create their own branded
+                      products with manufacturer matchmaking, custom branding
+                      support, and end-to-end quality control.
+                    </p>
+                    <ul
+                      class="flex flex-wrap justify-start items-center gap-2 mt-6 *:text-xs *:py-1.5 *:px-4 *:bg-warning/20 text-warning font-medium *:rounded-lg"
+                    >
+                      <li>
+                        <p>Product</p>
+                      </li>
+                      <li>
+                        <p>Search</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -544,10 +712,20 @@
                 Our comprehensive logistics network at your service, offering
                 complete delivery solutions from door to door.
               </p>
+              <button
+                id="swipeBtn"
+                class="flex flex-col gap-1 mx-auto italic h4 text-night"
+              >
+                <i
+                  class="text-4xl fa-solid fa-hand-pointer animate-swipe text-main"
+                ></i>
+                <span class="text-base">Swipe </span>
+              </button>
             </header>
+
             <div
               style="--swiper-navigation-color: var(--color-main)"
-              class="!px-10 text-center swiper categoriesSwiper my-7 md:my-12"
+              class="text-center swiper categoriesSwiper my-7 md:my-12"
             >
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -566,7 +744,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -588,7 +766,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -610,7 +788,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -632,7 +810,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -654,7 +832,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -676,7 +854,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -698,7 +876,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -720,7 +898,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -742,7 +920,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -764,7 +942,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -786,7 +964,7 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
@@ -808,15 +986,293 @@
                       />
                     </div>
                     <div class="p-5 content">
-                      <h4 class="text-base font-semibold text-silver">
+                      <h4 class="text-xs font-semibold text-silver">
                         Food & Beverages
                       </h4>
                     </div>
                   </a>
                 </div>
               </div>
-              <div class="swiper-button-next categoriesSwiper"></div>
-              <div class="swiper-button-prev categoriesSwiper"></div>
+            </div>
+            <div
+              style="--swiper-navigation-color: var(--color-main)"
+              class="text-center swiper categoriesSwiper my-7 md:my-12"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="https://rfq-iframe.tijarahub.com/registration/form/"
+                    class="overflow-hidden"
+                  >
+                    <div
+                      class="border mx-auto transition-all duration-300 hover:bg-[#f5cbba] rounded-full size-28 border-[#f5cbba]"
+                    >
+                      <img
+                        src="https://ik.imagekit.io/tijarahub/optimized/Frontend-Ayehia/Pages/Cat-Home-sec/F%26B.png?_t=1734525726"
+                        class="p-2 mx-auto rounded-full size-28"
+                      />
+                    </div>
+                    <div class="p-5 content">
+                      <h4 class="text-xs font-semibold text-silver">
+                        Food & Beverages
+                      </h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <a
+                rel="noreferrer noopener"
+                target="_blank"
+                href="https://rfq-iframe.tijarahub.com/registration/form/"
+                class="relative px-16 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+                ><span class="relative">See All Categories</span></a
+              >
             </div>
           </div>
         </section>
@@ -1146,7 +1602,7 @@
               </p>
             </header>
             <div
-              class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:transition-all *:duration-300 *:hover:border-main *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-5 *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.tags_li_p]:bg-silver/10 *:[&_>_.tags_li_p]:px-2 *:[&_>_.tags_li_p]:py-1.5 *:[&_>_.tags_li_p]:rounded-lg *:[&_>_.tags_li_p]:text-xs *:[&_>_.tags_li_p]:text-center *:[&_>_.tags_li_p]:max-w-[115px] *:[&_>_.icons]:text-3xl *:[&_>_.icons]:text-silver *:[&_>_.icons]:flex *:[&_>_.icons]:items-center *:[&_>_.icons]:gap-2"
+              class="my-7 md:my-12 grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 *:border *:transition-all *:duration-300 *:hover:border-main *:border-main/10 *:rounded-xl *:overflow-hidden *:p-5 *:shadow *:flex *:flex-col *:gap-5 *:[&_>_hgroup]:flex-1 *:[&_>_.icon-box]:bg-main/10 *:[&_>_.icon-box]:text-main *:[&_>_.icon-box]:size-16 *:[&_>_.icon-box]:text-2xl *:[&_>_.icon-box]:flex *:[&_>_.icon-box]:items-center *:[&_>_.icon-box]:justify-center *:[&_>_.icon-box]:rounded-full *:[&_>_.icons]:text-3xl *:[&_>_.icons]:text-silver *:[&_>_.icons]:flex *:[&_>_.icons]:items-center *:[&_>_.icons]:gap-2"
             >
               <div>
                 <div class="icon-box">
@@ -1164,9 +1620,6 @@
                   <i class="fa-brands fa-cc-mastercard"></i>
                   <i class="fa-brands fa-cc-amex"></i>
                 </div>
-                <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
               </div>
               <div>
                 <div class="icon-box">
@@ -1183,9 +1636,6 @@
                   <i class="fa-solid fa-money-bill-transfer"></i>
                   <i class="fa-solid fa-money-check-dollar"></i>
                 </div>
-                <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
               </div>
               <div>
                 <div class="icon-box">
@@ -1202,23 +1652,16 @@
                   <i class="fa-solid fa-clock"></i>
                   <i class="fa-solid fa-hand-holding-dollar"></i>
                 </div>
-                <!-- <ul class="tags">
-              <li><p>test</p></li>
-            </ul> -->
               </div>
             </div>
             <div class="text-center">
-              <button
+              <a
+                rel="noreferrer noopener"
+                target="_self"
+                href="./pages/payment.html"
                 class="relative px-6 py-4 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
-              >
-                <a
-                  rel="noreferrer noopener"
-                  target="_self"
-                  href="./pages/payment.html"
-                  class="relative"
-                  >Learn More About Payment Methods</a
-                >
-              </button>
+                ><span class="relative">Learn More About Payment Methods</span>
+              </a>
             </div>
           </div>
         </section>
@@ -1339,6 +1782,130 @@
         </section>
       </div>
     </main>
+    <!-- Footer -->
+    <footer class="py-10 border-t border-main/10">
+      <div
+        class="container flex flex-col justify-between gap-10 py-6 max-lg:items-center lg:flex-row"
+      >
+        <div
+          class="flex flex-col items-center gap-4 lg:flex-row max-lg:text-center"
+        >
+          <a
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://tijarahub.com/"
+          >
+            <img
+              role="img"
+              aria-label="TijaraHub icon"
+              title="TijaraHub"
+              src="./assets/logo.png"
+              alt="TijaraHub"
+              class="h-[100px] object-contain"
+            />
+          </a>
+
+          <hgroup class="space-y-1 max-w-[640px]">
+            <h4 class="font-bold">
+              Tijarahub International LLC. Copyright © 2025.
+            </h4>
+            <p>
+              TijaraHub International LLC, limited company registered in Sharjah
+              Media City Free Zone under License Number 2323378.01, Tax Number
+              104118980200001.
+            </p>
+          </hgroup>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-between gap-5">
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://www.linkedin.com/company/tijarahub"
+            >
+              <i class="text-xl fa-brands fa-linkedin-in"></i>
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Linkedin</span
+              >
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://www.facebook.com/Tijarahub1"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Facebook</span
+              >
+              <i class="text-xl fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://twitter.com/TijaraHub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Twitter</span
+              >
+              <i class="text-xl fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://www.youtube.com/@tijarahub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Youtube</span
+              >
+              <i class="text-xl fa-brands fa-youtube"></i>
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://www.instagram.com/tijarahub1/"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Instagram</span
+              >
+              <i class="text-xl fa-brands fa-instagram"></i>
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.TijaraHub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Google Play</span
+              >
+              <i class="text-xl fa-brands fa-google-play"></i>
+            </a>
+            <a
+              rel="noreferrer noopener external nofollow"
+              class="relative group"
+              target="_blank"
+              href="https://apps.apple.com/eg/app/tijarahub/id6738108098"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm start-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-main/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >App Store</span
+              >
+              <i class="text-2xl fa-brands fa-app-store"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

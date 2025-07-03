@@ -262,6 +262,8 @@ document.body.addEventListener("click", (e) => {
 
 
 // Sliders
+
+const swipeBtn = document.querySelector("#swipeBtn")
 new Swiper(".servicesSwiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -279,66 +281,47 @@ new Swiper(".servicesSwiper", {
   pagination: false,
 });
 
-new Swiper(".categoriesSwiper", {
+const categoriesSwiper = new Swiper(".categoriesSwiper", {
   spaceBetween: 0,
   freeMode: true,
   pagination: false,
   breakpoints: {
     0: {
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
     320: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 10,
     },
     620: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 10,
     },
     768: {
       slidesPerView: 4,
-      spaceBetween: 40,
+      spaceBetween: 10,
     },
     1024: {
-      slidesPerView: 4,
-      spaceBetween: 50,
+      slidesPerView: 7,
+      spaceBetween: 10,
     },
   }, navigation: {
     nextEl: ".swiper-button-next.categoriesSwiper",
     prevEl: ".swiper-button-prev.categoriesSwiper",
   },
 });
+categoriesSwiper[1].slideTo(categoriesSwiper[1].slides.length - 1, 0);
+let isClicked = false;
+document.querySelector("#swipeBtn").addEventListener("click", () => {
+  if (!isClicked) {
+    categoriesSwiper[0].slideTo(categoriesSwiper[0].slides.length - 1, 1000);
+    categoriesSwiper[1].slideTo(0, 1000);
+    isClicked = true
+  } else {
+    categoriesSwiper[1].slideTo(categoriesSwiper[1].slides.length - 1, 1000);
+    categoriesSwiper[0].slideTo(0, 1000);
+    isClicked = false
+  }
 
-
-new Swiper(".categoriesSwiper2", {
-  spaceBetween: 0,
-  freeMode: true,
-  pagination: false,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 30,
-    },
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    620: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 50,
-    },
-  }, navigation: {
-    nextEl: ".swiper-button-next.categoriesSwiper2",
-    prevEl: ".swiper-button-prev.categoriesSwiper2",
-  },
-});
-
+})
