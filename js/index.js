@@ -55,7 +55,8 @@ function toggleHeaderBackground() {
     pageHeader.classList.remove("border-main/10");
   }
 }
-window.addEventListener("load", toggleHeaderBackground)
+
+toggleHeaderBackground();
 window.addEventListener("scroll", toggleHeaderBackground)
 
 
