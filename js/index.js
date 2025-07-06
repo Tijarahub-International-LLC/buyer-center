@@ -315,7 +315,7 @@ const categoriesSwiper = new Swiper(".categoriesSwiper", {
 });
 categoriesSwiper[1].slideTo(categoriesSwiper[1].slides.length - 1, 0);
 let isClicked = false;
-document.querySelector("#swipeBtn").addEventListener("click", () => {
+swipeBtn.addEventListener("click", () => {
   if (!isClicked) {
     categoriesSwiper[0].slideTo(categoriesSwiper[0].slides.length - 1, 1000);
     categoriesSwiper[1].slideTo(0, 1000);
@@ -327,3 +327,37 @@ document.querySelector("#swipeBtn").addEventListener("click", () => {
   }
 
 })
+
+const agentsSwiper = new Swiper(".agentsSwiper", {
+  spaceBetween: 0,
+  freeMode: true,
+  pagination: false,
+  autoplay: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    620: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 6,
+      spaceBetween: 30,
+    },
+  }, navigation: {
+    nextEl: ".swiper-button-next.categoriesSwiper",
+    prevEl: ".swiper-button-prev.categoriesSwiper",
+  },
+});
+
+
