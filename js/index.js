@@ -73,6 +73,7 @@ function toggleVideoModal() {
   videoContainer.classList.toggle("hidden");
   videoContainer.classList.toggle("flex");
   document.body.classList.toggle("overflow-y-hidden");
+  videoContainer.querySelector("video").pause();
   isVideoOpened = !isVideoOpened;
 }
 //Video Toggle
