@@ -3,7 +3,7 @@
 
 @theme {
   /* Colors */
-    --color-main: #F05D43;
+    --color-main: #ed5d2d;
     --color-silver: #4B5563;
     --color-night: #121212;
     --color-info: #004B90;
@@ -89,3 +89,6 @@ button {
 }
 
 
+.datepicker-dropdown {
+  z-index: 99999 !important;
+}

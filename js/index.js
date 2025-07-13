@@ -1,4 +1,5 @@
 import data from "../data.json" with { type: "json" };
+AOS.init();
 const { faqs } = data;
 const langToggle = document.querySelector("#lang-toggle");
 const langMenu = document.querySelector("#lang-menu");
@@ -39,20 +40,22 @@ close?.addEventListener('click', () => {
 function toggleHeaderBackground() {
   let headerHeight = document.querySelector("#hero")?.scrollHeight
 
+  if (pageHeader) {
 
-  if (scrollY > headerHeight - 150) {
-    pageHeader.classList.remove("text-white");
-    pageHeader.classList.add("text-night");
-    pageHeader.classList.add("bg-white");
-    pageHeader.classList.add("border-b");
-    pageHeader.classList.add("border-main/10");
+    if (scrollY > headerHeight - 150) {
+      pageHeader.classList.remove("text-white");
+      pageHeader.classList.add("text-night");
+      pageHeader.classList.add("bg-white");
+      pageHeader.classList.add("border-b");
+      pageHeader.classList.add("border-main/10");
 
-  } else {
-    pageHeader.classList.add("text-white");
-    pageHeader.classList.remove("text-night");
-    pageHeader.classList.remove("bg-white");
-    pageHeader.classList.remove("border-b");
-    pageHeader.classList.remove("border-main/10");
+    } else {
+      pageHeader.classList.add("text-white");
+      pageHeader.classList.remove("text-night");
+      pageHeader.classList.remove("bg-white");
+      pageHeader.classList.remove("border-b");
+      pageHeader.classList.remove("border-main/10");
+    }
   }
 }
 
@@ -66,7 +69,7 @@ const handleLangOptions = () => {
   langMenu.classList.toggle("opacity-0")
   langMenu.classList.toggle("flex");
   langMenu.classList.toggle("hidden")
-  pageHeader.classList.toggle("overflow-hidden")
+  pageHeader?.classList.toggle("overflow-hidden")
 }
 langToggle.addEventListener("click", handleLangOptions)
 
@@ -729,7 +732,9 @@ shipmentDateInput.addEventListener("changeDate", () => {
   today.setHours(0, 0, 0, 0);
 
   if (selectedDate < today || shipmentDateInput.value === "") {
-    toggleModal();
+    toggleValidationModal();
+    document.querySelector("#modalTitle").textContent = "Missing Information"
+    document.querySelector("#modalDesc").textContent = "Please complete the following required fields:"
     fillValidationList(["Shipment Date (It Must be in The Future)"])
     shipmentDateInput.value = "";
     shipmentDateInput.blur()
@@ -763,20 +768,25 @@ toggle.addEventListener("change", (e) => {
 // Container Size Selection
 const radios = document.querySelectorAll('input[name="container-size"]');
 radios.forEach((radio) => {
-  radio.addEventListener('change', () => {
-    const containerSize = getContainerSize();
-    selectedData.containerSize = containerSize;
+  radio.addEventListener('change', (e) => {
+    selectedData.containerSize = e.target.value;
     localStorage.setItem("selectedData", JSON.stringify(selectedData));
   });
 });
 
 function getContainerSize() {
-  const selected = document.querySelector('input[name="container-size"]:checked');
-  return selected ? selected.value : null;
+  const selected = JSON.parse(localStorage.getItem("selectedData"));
+  if (selected?.containerSize) {
+    const targetInput = document.querySelector(`input[value="${selected.containerSize}"]`);
+    targetInput.checked = true
+    return selected ? selected : null;
+  }
 }
 
+// Initialize Current Cached Container Size When The Page is Loaded
+getContainerSize()
 // Toggle Modal
-function toggleModal() {
+function toggleValidationModal() {
   const modal = document.querySelector("#validationModal");
   modal.classList.toggle("hidden");
   document.body.classList.toggle("overflow-y-hidden");
@@ -806,7 +816,7 @@ function fillValidationList(notVaildElementList) {
 
 
 // Handle Form Submtion
-const form = document.querySelector("form")
+const form = document.querySelector("#shipmentForm")
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const requiredFields = [
@@ -834,7 +844,7 @@ form.addEventListener("submit", (e) => {
   });
 
   if (missingFields.length > 0) {
-    toggleModal();
+    toggleValidationModal();
     fillValidationList(missingFields);
     return;
   }
@@ -848,6 +858,8 @@ form.addEventListener("submit", (e) => {
     date: selectedData.shipmentDate
   }
   getCardsData(requestBody)
+  localStorage.removeItem("selectedData")
+  form.classList.remove("z-[9999]")
 })
 
 async function getCardsData(requestBody) {
@@ -874,25 +886,36 @@ async function getCardsData(requestBody) {
       content = `
       <h4 class="text-4xl font-bold">Sorry, Not Found Data</h4>
       `
-      toggleModal();
-      fillValidationList(["Sorry No Data Found for This Ports"])
+      toggleValidationModal();
+      document.querySelector("#modalTitle").textContent = "Something Went Wrong!";
+      document.querySelector("#modalDesc").textContent = "Faild to Fetch Data";
+      fillValidationList([`Sorry, No Data Found for This Ports (${selectedData.port.code} => ${selectedData.destinationPort.code}) Yet.`])
       return
     }
-    data.forEach((ship) => {
-      content += `
-      ${createAndFillCards(ship)}`
-    })
+    if (data.status_code == 400 || data.status_code == 401 || data.status_code == 500) {
+      toggleValidationModal();
+      document.querySelector("#modalTitle").textContent = "Something Went Wrong!";
+      document.querySelector("#modalDesc").textContent = `Faild to Fetch Data`;
+      fillValidationList([`Sorry, No Data Found for This Ports (${selectedData.port.code} => ${selectedData.destinationPort.code}) Yet.`])
+      return
+    } else {
+      data.forEach((ship, index) => {
+        const colIndex = index % 3;
+        content += `
+        ${createAndFillCards(ship, colIndex)}`
+      })
+    }
     cardsContainer.insertAdjacentHTML("beforeend", content)
 
   } catch (error) {
-    console.log("🚀 ~ getData ~ error:", error)
-    toggleModal();
+    console.log("🚀 ~ getData ~ error:", error.message)
+    toggleValidationModal();
     fillValidationList([`${error.message}`])
   }
 }
 
 
-function createAndFillCards(ship) {
+function createAndFillCards(ship, index) {
   const emailVariables = {
     country: ship.routingLegs[0].legTo.placeCountry.name,
     allInRate: ship.quoteLine.surcharges.matchingSurchargesPerEquipmentTypes[0].allInRate,
@@ -936,7 +959,7 @@ function createAndFillCards(ship) {
 
   const mailtoLink = `https://wa.me/+201555943415?text=${encodeURIComponent(body)}`;
   let content = ` 
-      <div class="w-[350px] xl:w-[360px] max-[350px]:w-[260px] h-[630px] group perspective-[1000px]">
+      <div data-aos="${index === 0 ? "fade-right" : index === 1 ? "fade-up" : "fade-left"}" class="w-[350px] xl:w-[360px] max-[350px]:w-[260px] h-[540px] group perspective-[1000px]">
             <div
               class="relative transition-transform duration-700 flip-card-inner group-hover:rotate-y-180 transform-3d size-full"
             >
@@ -944,9 +967,9 @@ function createAndFillCards(ship) {
                 class="flip-card-front backface-hidden absolute size-full rounded-2xl flex flex-col bg-[url('../assets/images/shipment/taj.jpg')] bg-cover bg-top p-6 overflow-hidden shadow-[0_8px_14px_0_rgba(0,_0,_0,_0.2)]"
               >
                 <span
-                  class="absolute text-white bg-[#ff7e00] font-bold p-3 z-10 right-[25px] top-10 vertical-text rounded"
+                  class="rounded p-3 px-6 mx-auto font-bold bg-main text-center text-white uppercase"
                 >
-                  ${ship.routingLegs[0].legTo.placeCountry.name}
+                  ${selectedData.destinationCountry.name}
                 </span>
                 <div
                   class="absolute z-10 flex flex-col gap-6 text-white transition-all duration-500 bottom-10 group-hover:-start-full start-10 content"
@@ -957,11 +980,11 @@ function createAndFillCards(ship) {
                     <h3 class="text-6xl font-bold">${ship.routingLegs[0].vesselName}</h3>
                   </div>
                   <div class="flex gap-2">
-                    <span class="bg-[#ff7e00] py-0.5 px-3 text-sm rounded-sm"
-                      >${ship.arrivalDate.split("T")[0]}</span
+                    <span class="bg-main py-0.5 px-3 text-sm rounded-sm"
+                      >${selectedData.destinationPort.code}</span
                     >
-                    <span class="bg-[#ff7e00] py-0.5 px-3 text-sm rounded-sm"
-                      >${ship.routingLegs[0].legTo.place.internalCode}</span
+                    <span class="bg-main py-0.5 px-3 text-sm rounded-sm"
+                      >${ship.arrivalDate.split("T")[0]}</span
                     >
                   </div>
                 </div>
@@ -975,34 +998,37 @@ function createAndFillCards(ship) {
               >
                 <div class="relative z-50 space-y-4 size-full">
                   <div class="flex flex-col gap-1 card-header">
-                    <h2
-                      class="text-4xl font-bold text-orange-500 uppercase shipName"
+                    <span class="text-base font-medium">${selectedData.port.code} <i class="fa-solid fa-right-long"></i> ${selectedData.destinationPort.code}</span>
+                    <ul
+                      class="other-info flex items-center gap-2 *:py-1.5 *:px-2.5 text-xs *:flex-1 *:rounded *:bg-main text-white text-center"
                     >
-                      ${ship.routingLegs[0].vesselName}
-                    </h2>
-                    <span class="text-base font-medium">${selectedData.port.code} - ${selectedData.destinationPort.code}</span>
-                    <span class="text-gray-500">Departure Date</span>
+                      <li><p class="truncate max-w-[160px]">${selectedData.hsCode.name}</p></li>
+                      <li><p>$${selectedData.orderValue}</p></li>
+                      <li><p>${selectedData.containerSize}</p></li>
+                    </ul>
+                    <span class="text-gray-500 mt-4">Departure Date</span>
                   </div>
                   <div
-                    class="relative card-body ps-8 before:absolute before:h-full before:w-0.5 before:start-4 before:top-0 before:bg-gray-500 flex flex-col gap-4"
+                    class="relative card-body ps-8 before:absolute before:h-full before:w-0.5 before:start-4 before:top-1.5 before:bg-gray-500 flex flex-col gap-4"
                   >
                     <span
                       class="relative ps-2 before:translate-x-[calc(-50%_+_(0.125rem_/_2))] departure-date before:absolute before:top-1/2 before:-translate-y-1/2 before:rounded-full before:-start-4 before:size-3.5 before:bg-gray-500"
                       >${ship.departureDate.split("T")[0]}</span
                     >
                     <div class="relative mb-3 ps-4">
-                      <h4 class="mt-2 mb-3 text-4xl font-bold">${ship.routingLegs[0].vesselName}</h4>
+                    ${ship.routingLegs[0].vesselName.split("").length > 10 ?
+      `<h4 class="mt-2 mb-3 h3 font-bold">${ship.routingLegs[0].vesselName}</h4>` : `<h4 class="mt-2 mb-3 h3 font-bold max-w-[150px]">${ship.routingLegs[0].vesselName}</h4>`}
                       <ul
-                        class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm text-gray-500"
+                        class="flex flex-wrap  items-center gap-x-2 gap-y-0.5 text-sm text-gray-500"
                       >
                       ${ship.routingLegs.length > 1 ? ship.routingLegs.slice(1).map((leg) => {
 
-    return `<li><p>${leg.vesselName}</p></li>`
-  }).join(" ") : ""}
+        return `<li><p>${leg.vesselName}</p></li>`
+      }).join(" ") : ""}
                       
                       </ul>
                       <div
-                        class="flex flex-wrap mt-4 items-center gap-2 *:py-1.5 *:px-4 *:rounded text-sm *:bg-orange-500 text-white text-center"
+                        class="flex flex-wrap mt-4 items-center gap-2 *:py-1.5 *:px-4 *:rounded text-sm *:bg-main text-white text-center"
                       >
                         <p>${ship.transitTime} ${ship.transitTime > 1 ? "Days" : "Day"} </p>
                         <p>${ship.routingLegs.length > 1 ? "Transit" : "Direct"}</p>
@@ -1010,31 +1036,22 @@ function createAndFillCards(ship) {
                       <span
                         class="absolute py-4 -translate-x-1/2 -translate-y-1/2 bg-gray-200 -start-4 top-1/2"
                       >
-                        <i class="text-4xl text-orange-500 fa-solid fa-ship"></i
+                        <i class="text-4xl text-main fa-solid fa-ship"></i
                       ></span>
                     </div>
                     <span class="relative ps-2"
                       >${ship.arrivalDate.split("T")[0]}
                       <span
-                        class="absolute text-xl text-gray-500 -translate-x-1/2 -translate-y-1/2 bg-gray-200 -start-4 top-1/2"
+                        class="absolute text-xl text-gray-500 -translate-x-1/2 -translate-y-1/2 p-2 bg-gray-200 -start-4 top-1/2"
                         ><i class="fa-solid fa-location-dot ms-0.5"></i
                       ></span>
                     </span>
                   </div>
                   <span class="text-gray-500">Arrival Date</span>
-                  <div class="mt-5 card-footer">
-                    <ul
-                      class="other-info flex items-center gap-2 flex-wrap *:py-1.5 *:px-2.5 *:rounded *:bg-orange-500 text-white text-center"
-                    >
-                      <li><p>${selectedData.hsCode.name}</p></li>
-                      <li><p>$${selectedData.orderValue}</p></li>
-                      <li><p>${selectedData.containerSize}</p></li>
-                    </ul>
-                  </div>
                   <div class="mt-5 text-center card-cta">
                     <a
                     href="${mailtoLink}"
-                      class="px-4 py-3 text-white bg-orange-500 rounded-md"
+                      class="px-4 py-3 text-white bg-main rounded-md"
                     >
                       Send Inquiry
                     </a>
@@ -1052,17 +1069,6 @@ function createAndFillCards(ship) {
 // Handle Click Outside 
 document.body.addEventListener("click", (e) => {
   if (e.target === document.querySelector("#validationModal") || e.target === document.querySelector("#closeModalBtn") || e.target === document.querySelector("#cancelModalBtn") || e.target === document.querySelector("#closeModalBtn").querySelector("i")) {
-    toggleModal();
+    toggleValidationModal();
   }
-})
-
-const elements = [document.querySelector("#shippingInfoDropdownButton"), document.querySelector("#locationDropdownButton"), document.querySelector("#destinationDropdownButton")]
-elements?.map((ele) => {
-  ele.addEventListener("click", () => {
-    scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    })
-  })
 })
