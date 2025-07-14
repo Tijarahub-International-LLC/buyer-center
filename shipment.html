@@ -125,70 +125,65 @@
     ></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
+    <header class="absolute top-0 start-0 z-50 w-full text-white">
+      <nav class="flex px-6 md:px-16 py-4 md:py-8 justify-between items-center">
+        <a rel="noreferrer noopener" target="_self" href="./index.html">
+          <img
+            role="img"
+            aria-label="TijaraHub Logo"
+            title="TijaraHub"
+            src="assets/logo.png"
+            alt="TijaraHub Logo"
+            width="48"
+            height="48"
+            class="size-14"
+          />
+        </a>
 
-    <!-- Main Content -->
-    <main class="min-h-screen bg-black flex flex-col gap-10 relative">
-      <div
-        class="relative size-full bg-[url('../assets/background.jpg')] bg-no-repeat bg-cover bg-center"
-      >
-        <div class="absolute top-0 size-full start-0 bg-black/70"></div>
-        <div class="relative">
-          <header class="text-white">
-            <nav
-              class="flex px-6 md:px-16 py-4 md:py-8 justify-between items-center"
+        <!-- Lang Toggler -->
+        <div class="flex items-center justify-between gap-4">
+          <div class="relative">
+            <div class="flex items-center gap-2">
+              <span
+                id="lang-toggle"
+                class="text-3xl transition duration-300 ease-in-out cursor-pointer"
+              >
+                <i class="fa-solid fa-globe lang-icon"></i>
+              </span>
+            </div>
+
+            <div
+              id="lang-menu"
+              class="absolute bg-main/80 backdrop-blur-md hidden duration-300 gap-1 flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
             >
-              <a rel="noreferrer noopener" target="_blank" href="./index.html">
-                <img
-                  role="img"
-                  aria-label="TijaraHub Logo"
-                  title="TijaraHub"
-                  src="assets/logo.png"
-                  alt="TijaraHub Logo"
-                  width="48"
-                  height="48"
-                  class="size-14"
-                />
+              <a
+                rel="noreferrer noopener"
+                target="_self"
+                href="./indexar.html"
+                class="block p-3 text-white rounded-lg font-arabic hover:bg-white hover:text-night"
+              >
+                العربية
               </a>
-
-              <!-- Lang Toggler -->
-              <div class="flex items-center justify-between gap-4">
-                <div class="relative">
-                  <div class="flex items-center gap-2">
-                    <span
-                      id="lang-toggle"
-                      class="text-3xl transition duration-300 ease-in-out cursor-pointer"
-                    >
-                      <i class="fa-solid fa-globe lang-icon"></i>
-                    </span>
-                  </div>
-
-                  <div
-                    id="lang-menu"
-                    class="absolute bg-main/80 backdrop-blur-md hidden duration-300 gap-1 flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
-                  >
-                    <a
-                      rel="noreferrer noopener"
-                      target="_self"
-                      href="./indexar.html"
-                      class="block p-3 text-white rounded-lg font-arabic hover:bg-white hover:text-night"
-                    >
-                      العربية
-                    </a>
-                    <a
-                      rel="noreferrer noopener"
-                      target="_self"
-                      href="./index.html"
-                      class="block p-3 bg-white rounded-lg font-inter text-night hover:bg-white"
-                    >
-                      English
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </nav>
-            <!-- Extra Mobile Links -->
-          </header>
+              <a
+                rel="noreferrer noopener"
+                target="_self"
+                href="./index.html"
+                class="block p-3 bg-white rounded-lg font-inter text-night hover:bg-white"
+              >
+                English
+              </a>
+            </div>
+          </div>
         </div>
+      </nav>
+      <!-- Extra Mobile Links -->
+    </header>
+    <!-- Main Content -->
+    <main
+      class="min-h-screen bg-[url('../assets/background.jpg')] bg-no-repeat bg-cover bg-center pb-10 bg-black flex flex-col gap-10 relative"
+    >
+      <div class="absolute top-0 size-full start-0 bg-black/70"></div>
+      <div class="relative size-full">
         <div class="relative container" id="hero">
           <section
             class="text-center xl:pb-[calc(152px_/_2)] md:pb-[calc(320px_/_2)] pb-[calc(476px_/_2)]"
@@ -826,10 +821,53 @@
             </div>
           </form>
         </div>
+        <section
+          class="flex flex-wrap justify-center gap-5 cards-container xl:py-[calc(152px_/_2)] py-[calc(476px_/_2)] md:py-[calc(320px_/_2)]"
+        ></section>
+        <!-- <div class="container flow-root">
+          <dl
+            class="-my-3 divide-y divide-gray-200 text-white rounded border border-gray-200 text-sm"
+          >
+            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium">Product Image</dt>
+
+              <dd class="text-gray-400 sm:col-span-2">
+                <img
+                  class="size-20"
+                  src="https://ik.imagekit.io/tijarahub/images/detailed/56/TijaraHub__3_.webp"
+                  alt="Oasis - Soda Drink – 1000ml Multi-Flavors – Bulk - TijaraHub"
+                />
+              </dd>
+            </div>
+            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium">Product Name</dt>
+
+              <dd class="text-gray-400 sm:col-span-2">
+                Oasis - Soda Drink – 1000ml Multi-Flavors – Bulk - TijaraHub
+              </dd>
+            </div>
+
+            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+              <dt class="font-medium">Order Value</dt>
+
+              <dd class="text-gray-400 sm:col-span-2">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <p>20ft Container</p>
+                    <p>$1980+</p>
+                    <p>$2.27 (Per Shrink)</p>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p>40ft Container</p>
+                    <p>$3960+</p>
+                    <p>$2.21 (Per Shrink)</p>
+                  </div>
+                </div>
+              </dd>
+            </div>
+          </dl>
+        </div> -->
       </div>
-      <section
-        class="flex flex-wrap justify-center gap-5 cards-container xl:py-[calc(152px_/_2)] py-[calc(476px_/_2)] md:py-[calc(320px_/_2)]"
-      ></section>
     </main>
     <!-- Footer -->
     <footer class="py-10 border-t border-main/10">
@@ -995,10 +1033,7 @@
         class="w-full mx-auto max-w-md rounded-lg bg-white/80 backdrop-blur-md p-6 shadow-lg"
       >
         <div class="flex items-start justify-between">
-          <h2
-            id="modalTitle"
-            class="text-xl font-bold text-gray-900 sm:text-2xl"
-          >
+          <h2 id="modalTitle" class="text-xl font-bold sm:text-2xl">
             Missing Information
           </h2>
           <button

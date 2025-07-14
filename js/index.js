@@ -76,6 +76,11 @@ langToggle.addEventListener("click", handleLangOptions)
 function toggleVideoModal() {
   videoContainer.classList.toggle("hidden");
   videoContainer.classList.toggle("flex");
+  scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  })
   document.body.classList.toggle("overflow-y-hidden");
   videoContainer.querySelector("video").pause();
   isVideoOpened = !isVideoOpened;
@@ -443,14 +448,16 @@ async function initCountriesData() {
   };
 
   // Display Countries List
-  countries.forEach((country) => {
-    countriesList.innerHTML += `
+  countries?.forEach((country) => {
+    if (countriesList) {
+      countriesList.innerHTML += `
       <li class="country-item rounded-sm p-2 hover:bg-gray-100">${country.name}</li>
       `;
+    }
   });
 
   // Handle Search Countries
-  countriesInput.addEventListener("keyup", (e) => {
+  countriesInput?.addEventListener("keyup", (e) => {
     const query = e.target.value.trim().toLowerCase();
     countriesList.querySelectorAll("li").forEach((li) => {
       li.classList.toggle("hidden", !li.textContent.trim().toLowerCase().includes(query));
@@ -458,7 +465,7 @@ async function initCountriesData() {
   });
 
   // Map on The Countries List
-  countriesList.querySelectorAll("li").forEach((li) => {
+  countriesList?.querySelectorAll("li").forEach((li) => {
     li.addEventListener("click", (e) => {
       // Save Selected Country 
       const selectedCountry = countriesData.filter((country) =>
@@ -547,7 +554,9 @@ async function initDestinationPortsData(targetPorts) {
   };
 
   // Empty The Ports List
-  portsList.innerHTML = "";
+  if (portsList) {
+    portsList.innerHTML = "";
+  }
 
   if (targetPorts.length === 0) {
     portsList.innerHTML += `
@@ -613,14 +622,18 @@ async function initDestinationCountriesData() {
   };
 
   // Display Countries List
-  countriesData.forEach((country) => {
-    countriesList.innerHTML += `
-      <li class="destination-country-item rounded-sm p-2 hover:bg-gray-100">${country.name}</li>
-      `;
-  });
+  if (countriesData) {
+    countriesData.forEach((country) => {
+      if (countriesList) {
+        countriesList.innerHTML += `
+          <li class="destination-country-item rounded-sm p-2 hover:bg-gray-100">${country.name}</li>
+          `;
+      }
+    });
+  }
 
   // Handle Search Countries
-  countriesInput.addEventListener("keyup", (e) => {
+  countriesInput?.addEventListener("keyup", (e) => {
     const query = e.target.value.trim().toLowerCase();
     countriesList.querySelectorAll("li").forEach((li) => {
       li.classList.toggle("hidden", !li.textContent.trim().toLowerCase().includes(query));
@@ -628,7 +641,7 @@ async function initDestinationCountriesData() {
   });
 
   // Map on The Countries List
-  countriesList.querySelectorAll("li").forEach((li) => {
+  countriesList?.querySelectorAll("li").forEach((li) => {
     li.addEventListener("click", (e) => {
       // Save Selected Country 
       const selectedCountry = countriesData.filter((country) =>
@@ -663,14 +676,20 @@ async function initHsCodesData() {
   };
 
   // Display HS Codes List
-  HscodesData.forEach((hsCode) => {
-    HscodesList.innerHTML += `
-      <li class="hs-code-item rounded-sm p-2 hover:bg-gray-100">${hsCode.name}</li>
-      `;
-  });
+  if (HscodesData) {
+    HscodesData.forEach((hsCode) => {
+      if (HscodesList) {
+        HscodesList.innerHTML += `
+          <li class="hs-code-item rounded-sm p-2 hover:bg-gray-100">${hsCode.name}</li>
+          `;
+      }
+    });
+
+  }
+
 
   // Handle Search HS Codes
-  HscodesInput.addEventListener("keyup", (e) => {
+  HscodesInput?.addEventListener("keyup", (e) => {
     const query = e.target.value.trim().toLowerCase();
     const allItems = HscodesList.querySelectorAll("li");
     let visibleCount = 0;
@@ -696,7 +715,7 @@ async function initHsCodesData() {
   });
 
   // Map on The HS Codes List
-  HscodesList.querySelectorAll("li").forEach((li) => {
+  HscodesList?.querySelectorAll("li").forEach((li) => {
     li.addEventListener("click", (e) => {
       // Ignore click on "No Result Found" message
       if (e.target.closest(".no-result-msg")) return;
@@ -726,7 +745,7 @@ initDestinationCountriesData();
 initCountriesData();
 // Shipment Date Validation
 const shipmentDateInput = document.getElementById("shipmentDate");
-shipmentDateInput.addEventListener("changeDate", () => {
+shipmentDateInput?.addEventListener("changeDate", () => {
   const selectedDate = new Date(shipmentDateInput.value);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -750,7 +769,7 @@ shipmentDateInput.addEventListener("changeDate", () => {
 
 // Order Value Input
 const orderValueInput = document.querySelector("#orderValueInput");
-orderValueInput.addEventListener("change", (e) => {
+orderValueInput?.addEventListener("change", (e) => {
   selectedData.orderValue = e.target.value;
   localStorage.setItem("selectedData", JSON.stringify(selectedData));
 });
@@ -758,7 +777,7 @@ orderValueInput.addEventListener("change", (e) => {
 // Toggle Mode (Cold/Dry)
 const toggle = document.getElementById("toggle");
 const labelText = document.getElementById("modeLabel");
-toggle.addEventListener("change", (e) => {
+toggle?.addEventListener("change", (e) => {
   const mode = toggle.checked ? "Cold" : "Dry";
   labelText.textContent = mode;
   selectedData.mode = mode;
@@ -817,7 +836,7 @@ function fillValidationList(notVaildElementList) {
 
 // Handle Form Submtion
 const form = document.querySelector("#shipmentForm")
-form.addEventListener("submit", (e) => {
+form?.addEventListener("submit", (e) => {
   e.preventDefault();
   const requiredFields = [
     { key: "hsCode", label: "Product Category (HS Code)" },
@@ -1068,7 +1087,7 @@ function createAndFillCards(ship, index) {
 
 // Handle Click Outside 
 document.body.addEventListener("click", (e) => {
-  if (e.target === document.querySelector("#validationModal") || e.target === document.querySelector("#closeModalBtn") || e.target === document.querySelector("#cancelModalBtn") || e.target === document.querySelector("#closeModalBtn").querySelector("i")) {
+  if (e.target === document.querySelector("#validationModal") || e.target === document.querySelector("#closeModalBtn") || e.target === document.querySelector("#cancelModalBtn") || e.target === document.querySelector("#closeModalBtn")?.querySelector("i")) {
     toggleValidationModal();
   }
 })
