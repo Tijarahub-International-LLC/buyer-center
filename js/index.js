@@ -148,7 +148,11 @@ insightsBoxes.forEach(box => observer.observe(box));
 
 
 // FAQs Toggler
-const initialFAQs = faqs.filter((item) => item.cat === "Corporate Information");
+let initialFAQs = faqs.filter((item) => item.cat === "Corporate Information");
+if (location.pathname === "/contact-us.html") {
+  initialFAQs = faqs.filter((item) => item.cat === "Contract Information");
+}
+
 // Toggle Answer Function
 function toggleAnswer() {
   const buttons = document.querySelectorAll(".toggleAnswer");

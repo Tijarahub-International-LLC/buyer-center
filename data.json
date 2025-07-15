@@ -50,7 +50,7 @@
         "ar": "كيف يمكنني التواصل مع فرع TijaraHub في مصر؟"
       },
       "answer": {
-        "en": "TijaraHub's Egypt Branch is at Villa 16, Street 254, Maadi, Cairo. For any inquiries or assistance, call +20225211044 or send a WhatsApp message to +201555943415.",
+        "en": "TijaraHub's Egypt Branch is at Villa 16, Street 254, Maadi, Cairo. For any inquiries or assistance, call <a class='underline' href='tel:+20225211044'>+20225211044</a> or send a WhatsApp message to <a class='underline' href='https://wa.me/201555943415?text=Hello%20From%20TijaraHub'>+201555943415.</a>",
         "ar": "يقع فرع TijaraHub في مصر في فيلا 16، شارع 254، المعادي، القاهرة. لأي استفسارات أو مساعدة، اتصل على +20225211044 أو أرسل رسالة عبر واتساب إلى +201555943415."
       },
       "cat": "Contract Information"
