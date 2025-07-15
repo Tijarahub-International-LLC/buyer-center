@@ -13,6 +13,11 @@ const videoContainer = document.querySelector("#videoContainer");
 
 
 let isVideoOpened = false;
+
+// Lang Checker 
+const isEnglishVersion = () => {
+  return document.documentElement.lang === "en" ? true : false
+}
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
@@ -82,7 +87,6 @@ function toggleVideoModal() {
     behavior: "smooth"
   })
   document.body.classList.toggle("overflow-y-hidden");
-  videoContainer.querySelector("video").pause();
   isVideoOpened = !isVideoOpened;
 }
 //Video Toggle
@@ -149,6 +153,7 @@ insightsBoxes.forEach(box => observer.observe(box));
 
 // FAQs Toggler
 let initialFAQs = faqs.filter((item) => item.cat === "Corporate Information");
+
 if (location.pathname === "/contact-us.html") {
   initialFAQs = faqs.filter((item) => item.cat === "Contract Information");
 }
@@ -189,8 +194,62 @@ function toggleAnswer() {
     });
   });
 }
+function processPhoneNumbers(data) {
+  const whatsappIndicators = [
+    // English
+    'via WhatsApp', 'WhatsApp at', 'WhatsApp on', 'via whatsapp', 'whatsapp at', 'whatsapp on',
+    'WhatsApp message to', 'send a WhatsApp message to', 'message via WhatsApp',
+    // Arabic
+    'عبر واتساب', 'على واتساب', 'رسالة واتساب', 'أرسل رسالة واتساب', 'واتساب على'
+  ];
+
+  // Regex patterns
+  const phoneRegex = /(?:\+|00)(?:\d\s*){10,15}/g;
+  const whatsappIndicatorRegex = new RegExp(
+    `(${whatsappIndicators.join('|')})\\s*((\\+|00)(?:\\d\\s*){10,15})`,
+    'gi'
+  );
+
+  function processText(text, lang) {
+    // Replace WhatsApp numbers with WhatsApp links
+    text = text.replace(whatsappIndicatorRegex, (match, indicator, fullNumber) => {
+      const number = fullNumber.replace(/\s+/g, '');
+      return `<a href="https://wa.me/${number}">${indicator} ${fullNumber.trim()}</a>`;
+    });
+
+    // Replace remaining phone numbers with tel: links, skipping already-wrapped numbers
+    text = text.replace(phoneRegex, match => {
+      const number = match.replace(/\s+/g, '');
+
+      // Skip if this number is already inside an anchor tag (WhatsApp or tel)
+      if (text.includes(`https://wa.me/${number}`) || text.includes(`tel:${number}`)) {
+        return match;
+      }
+
+      return `<a href="tel:${number}">${match.trim()}</a>`;
+    });
+
+    return text;
+  }
+
+  // Process each FAQ item
+  // let resData =
+  data.forEach(faq => {
+    if (faq.answer?.en) {
+      faq.answer.en = processText(faq.answer.en, 'en');
+    }
+    if (faq.answer?.ar) {
+      faq.answer.ar = processText(faq.answer.ar, 'ar');
+    }
+  });
+
+
+  return data;
+}
+
 // Inject Dom With Data
 function displayFaqs(data) {
+  processPhoneNumbers(data)
   let container = "";
   for (let i = 0; i < data.length; i++) {
     let { question, answer } = data[i]
@@ -204,7 +263,7 @@ function displayFaqs(data) {
                 <i class="fa-solid fa-question"></i>
                 </div>
                   <h4 class="body">
-                    ${question.en}
+                    ${isEnglishVersion() ? question.en : question.ar}
                   </h4>
                   </div>
                   <button  class="text-xl toggleAnswer text-main">
@@ -217,7 +276,7 @@ function displayFaqs(data) {
               class="px-6 faq-answer overflow-hidden transition-all border-main/10 max-h-0"
                 >
                 <p class="py-6">
-                  ${answer.en}
+                  ${isEnglishVersion() ? answer.en : answer.ar}
                 </p>
             </div>
       </div>
@@ -277,7 +336,7 @@ document.body.addEventListener("click", (e) => {
 
 // Sliders
 
-const swipeBtn = document.querySelector("#swipeBtn")
+
 new Swiper(".servicesSwiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -299,6 +358,7 @@ const categoriesSwiper = new Swiper(".categoriesSwiper", {
   spaceBetween: 0,
   freeMode: true,
   pagination: false,
+  autoplay: true,
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -317,7 +377,7 @@ const categoriesSwiper = new Swiper(".categoriesSwiper", {
       spaceBetween: 10,
     },
     1024: {
-      slidesPerView: 7,
+      slidesPerView: 8,
       spaceBetween: 10,
     },
   }, navigation: {
@@ -325,20 +385,7 @@ const categoriesSwiper = new Swiper(".categoriesSwiper", {
     prevEl: ".swiper-button-prev.categoriesSwiper",
   },
 });
-categoriesSwiper[1]?.slideTo(categoriesSwiper[1].slides.length - 1, 0);
-let isClicked = false;
-swipeBtn?.addEventListener("click", () => {
-  if (!isClicked) {
-    categoriesSwiper[0].slideTo(categoriesSwiper[0].slides.length - 1, 1000);
-    categoriesSwiper[1].slideTo(0, 1000);
-    isClicked = true
-  } else {
-    categoriesSwiper[1].slideTo(categoriesSwiper[1].slides.length - 1, 1000);
-    categoriesSwiper[0].slideTo(0, 1000);
-    isClicked = false
-  }
 
-})
 
 const agentsSwiper = new Swiper(".agentsSwiper", {
   spaceBetween: 0,

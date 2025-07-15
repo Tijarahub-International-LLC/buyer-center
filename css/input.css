@@ -10,11 +10,12 @@
     --color-success: #24770C;
     --color-warning: #D0870A;
     --color-section: #F9FAFB;
-    --color-fb:#e85c27;
+    --color-fb:#e85e27;
     --color-hb: #5acc61;
     --color-hs: #bd6455;
     --color-os: #f58551;
     --color-hm: #fc5f47;
+    --color-aa: #ff9d2e;
   /* Typography */
     --font-inter: "Inter", sans-serif;
     --font-arabic: "IBM Plex Sans Arabic", sans-serif;
