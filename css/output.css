@@ -432,6 +432,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-14 {
+    margin-top: calc(var(--spacing) * 14);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -793,6 +796,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-4 {
@@ -1836,6 +1846,11 @@
       border-radius: var(--radius-2xl);
     }
   }
+  .\*\:rounded-3xl {
+    :is(& > *) {
+      border-radius: var(--radius-3xl);
+    }
+  }
   .\*\:rounded-lg {
     :is(& > *) {
       border-radius: var(--radius-lg);
@@ -2009,6 +2024,14 @@
     &:is(:where(.group):hover *) {
       --tw-translate-y: calc(calc(10/12 * 100%) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .group-hover\:scale-100 {
+    &:is(:where(.group):hover *) {
+      --tw-scale-x: 100%;
+      --tw-scale-y: 100%;
+      --tw-scale-z: 100%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
   .group-hover\:rotate-y-180 {
@@ -2606,6 +2629,16 @@
       }
     }
   }
+  .\*\:hover\:shadow-main\/40 {
+    :is(& > *) {
+      &:hover {
+        --tw-shadow-color: color-mix(in srgb, #ed5d2d 40%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-main) 40%, transparent) var(--tw-shadow-alpha), transparent);
+        }
+      }
+    }
+  }
   .hover\:before\:size-\[130\%\] {
     &:hover {
       &::before {
@@ -2726,6 +2759,16 @@
   .max-lg\:mx-auto {
     @media (width < 64rem) {
       margin-inline: auto;
+    }
+  }
+  .max-lg\:\!hidden {
+    @media (width < 64rem) {
+      display: none !important;
+    }
+  }
+  .max-lg\:hidden {
+    @media (width < 64rem) {
+      display: none;
     }
   }
   .max-lg\:flex-col {
@@ -2908,6 +2951,11 @@
   .lg\:grid-cols-3 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-4 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .lg\:flex-row {
