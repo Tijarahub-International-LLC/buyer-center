@@ -1,6 +1,6 @@
 import data from "../data.json" with { type: "json" };
 AOS.init();
-const { faqs } = data;
+const { faqs, banks } = data;
 const langToggle = document.querySelector("#lang-toggle");
 const langMenu = document.querySelector("#lang-menu");
 const menu = document.querySelector('.menu');
@@ -156,6 +156,8 @@ let initialFAQs = faqs.filter((item) => item.cat === "Corporate Information");
 
 if (location.pathname === "/contact-us.html") {
   initialFAQs = faqs.filter((item) => item.cat === "Contract Information");
+} else if (location.pathname === "/payment.html") {
+  initialFAQs = faqs.filter((item) => item.cat === "Payment Methods");
 }
 
 // Toggle Answer Function
@@ -254,7 +256,7 @@ function displayFaqs(data) {
   for (let i = 0; i < data.length; i++) {
     let { question, answer } = data[i]
     container += `
-      <div class="bg-white border ${i === data.length - 1 ? "border-t-transparent" : ""} ${i === 0 ? "" : "border-t-transparent"} rounded-lg  border-main/10">
+      <div data-aos="fade-up" class="bg-white border ${i === data.length - 1 ? "border-t-transparent" : ""} ${i === 0 ? "" : "border-t-transparent"} rounded-lg  border-main/10">
         <div class="flex items-center justify-between gap-4 px-4 py-3">
           <div class="flex items-center gap-4">
             <div
@@ -419,6 +421,47 @@ const agentsSwiper = new Swiper(".agentsSwiper", {
   },
 });
 
+// ========== Payment Page =============//
+let currentbanks = banks.filter((bank) => bank.cat === "uae");
+const banksContainer = document.querySelector("#banks-container")
+const tabsContainer = document.querySelector("#tabs-container");
+// displaySelectedBanks(currentbanks)
+tabsContainer?.querySelectorAll("li button")?.forEach((btn) => {
+  btn?.addEventListener("click", () => {
+    tabsContainer?.querySelectorAll("li button").forEach((btn) => {
+      btn.classList.remove("active-bank-tab");
+    })
+    btn.classList.add("active-bank-tab");
+    if (btn.id === "uae") {
+      currentbanks = banks.filter((bank) => bank.cat === "uae");
+      displaySelectedBanks(currentbanks);
+    } else if (btn.id === "sa") {
+      currentbanks = banks.filter((bank) => bank.cat === "sa");
+      displaySelectedBanks(currentbanks);
+    } else if (btn.id === "jordan") {
+      currentbanks = banks.filter((bank) => bank.cat === "jordan");
+      displaySelectedBanks(currentbanks);
+    } else if (btn.id === "kuwait") {
+      currentbanks = banks.filter((bank) => bank.cat === "kuwait");
+      displaySelectedBanks(currentbanks);
+    }
+  })
+})
+function displaySelectedBanks(selectedBanks) {
+  let content = ""
+  selectedBanks.forEach(({ name, img, alt }) => {
+    content += `
+  <div data-aos="fade-right">
+    <img
+      src="${img}"
+      alt="${alt}"
+    />
+    <h4 class="body font-semibold">${name}</h4>
+  </div>
+  `})
+  banksContainer.innerHTML = "";
+  banksContainer?.insertAdjacentHTML("beforeend", content)
+}
 // ========== Shipment Page =============//
 
 // Loading

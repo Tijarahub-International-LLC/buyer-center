@@ -330,5 +330,139 @@
       },
       "cat": "Logistics"
     }
+  ],
+  "banks":[
+    {
+      "name" :"Emirates NBD",
+      "img": "./assets/icons/svgs/banks/uae/emirates-nbd.png",
+      "alt": "Emirates-NBD-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"RAKBANK",
+      "img": "./assets/icons/svgs/banks/uae/rak-bank.png",
+      "al": "Rak-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Mashreq",
+      "img": "./assets/icons/svgs/banks/uae/mashreq.png",
+      "alt": "Mashreq-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"ADCB",
+      "img": "./assets/icons/svgs/banks/uae/adcb.png",
+      "alt": "ADCB-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Dubai First",
+      "img": "./assets/icons/svgs/banks/uae/dubai-first.png",
+      "alt": "Dubai-First-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Samba",
+      "img": "./assets/icons/svgs/banks/uae/samba-bank.png",
+      "alt": "Samba-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Commercial Bank",
+      "img": "./assets/icons/svgs/banks/uae/commercial-bank-of-dubai.png",
+      "alt": "commercial-bank-of-dubai-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"FAB Bank",
+      "img": "./assets/icons/svgs/banks/uae/fab.png",
+      "alt": "Fab-Bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Standard Bank",
+      "img": "./assets/icons/svgs/banks/uae/standard.png",
+      "alt": "standard-chartered-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Al Hilal Bank",
+      "img": "./assets/icons/svgs/banks/uae/alhilal-bank.png",
+      "alt": "alhilal-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Deem",
+      "img": "./assets/icons/svgs/banks/uae/deem.png",
+      "alt": "deem-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Dubai Islamic",
+      "img": "./assets/icons/svgs/banks/uae/dubai-islamic-bank.png",
+      "alt": "dubai-islamic-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"EMIRATES ISLAMIC",
+      "img": "./assets/icons/svgs/banks/uae/emirats-islamic.png",
+      "alt": "emirats-islamic-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"HSBC",
+      "img": "./assets/icons/svgs/banks/uae/hsbc.png",
+      "alt": "hsbc-bank",
+      "cat": "uae"
+    },
+    {
+      "name" :"Alrajhi Bank",
+      "img": "./assets/icons/svgs/banks/sa/alrajhi-bank.png",
+      "alt": "alrajhi-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"SAB",
+      "img": "./assets/icons/svgs/banks/sa/sab.png",
+      "alt": "sab-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"BANK ALJAZIRA",
+      "img": "./assets/icons/svgs/banks/sa/aljazira-bank.png",
+      "alt": "aljazira-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"Riyad Bank",
+      "img": "./assets/icons/svgs/banks/sa/riyad-bank.png",
+      "alt": "riyad-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"Emirates NBD",
+      "img": "./assets/icons/svgs/banks/sa/emirates-nbd.png",
+      "alt": "emirates-nbd-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"Saudi Investment",
+      "img": "./assets/icons/svgs/banks/sa/saudi-investment-bank.png",
+      "alt": "saudi-investment-bank",
+      "cat": "sa"
+    },
+    {
+      "name" :"ARAB BANK",
+      "img": "./assets/icons/svgs/banks/jordan/arab-bank.png",
+      "alt": "arab-bank",
+      "cat": "jordan"
+    },
+    {
+      "name" :"NBK",
+      "img": "./assets/icons/svgs/banks/kuwait/nbk.png",
+      "alt": "nbk-bank",
+      "cat": "kuwait"
+    }
   ]
 }

@@ -95,6 +95,10 @@ button {
 }
 
 
+.active-bank-tab {
+  @apply text-main font-bold border-b border-main transition-all duration-300
+}
+
 .datepicker-dropdown {
   z-index: 99999 !important;
 }
