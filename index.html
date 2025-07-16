@@ -191,7 +191,7 @@
         </ul>
         <!-- Lang Toggler -->
         <div class="relative flex items-center gap-4">
-          <div class="max-md:hidden absolute -start-[180px] min-w-[160px]">
+          <div class="max-sm:hidden absolute -start-[180px] min-w-[160px]">
             <a
               rel="noreferrer noopener"
               target="_self"
@@ -243,7 +243,7 @@
       <ul
         class="container justify-center hidden gap-5 pt-2 pb-4 border-b max-xl:flex body *:hover:text-main *:transition-all *:duration-200 border-b-main/10"
       >
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
@@ -253,7 +253,7 @@
             Home
           </a>
         </li>
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
@@ -263,7 +263,7 @@
             Get in Touch
           </a>
         </li>
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
@@ -272,6 +272,17 @@
           >
             Inspection
           </a>
+        </li>
+        <li class="sm:hidden">
+          <div class="min-w-[160px]">
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./shipment.html"
+              class="relative px-4 py-3 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+              ><span class="relative">Shipment Finder</span></a
+            >
+          </div>
         </li>
       </ul>
     </header>

@@ -862,11 +862,17 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
   .overflow-y-hidden {
     overflow-y: hidden;
+  }
+  .overscroll-y-auto {
+    overscroll-behavior-y: auto;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -1458,8 +1464,20 @@
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
+  }
   .pt-40 {
     padding-top: calc(var(--spacing) * 40);
+  }
+  .pt-44 {
+    padding-top: calc(var(--spacing) * 44);
+  }
+  .pt-46 {
+    padding-top: calc(var(--spacing) * 46);
+  }
+  .pt-48 {
+    padding-top: calc(var(--spacing) * 48);
   }
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
@@ -2791,6 +2809,11 @@
       display: none;
     }
   }
+  .max-sm\:hidden {
+    @media (width < 40rem) {
+      display: none;
+    }
+  }
   .max-sm\:border-b {
     @media (width < 40rem) {
       border-bottom-style: var(--tw-border-style);
@@ -2811,6 +2834,11 @@
   .sm\:flex {
     @media (width >= 40rem) {
       display: flex;
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
     }
   }
   .sm\:grid-cols-2 {

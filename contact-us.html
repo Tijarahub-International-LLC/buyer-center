@@ -171,18 +171,23 @@
             </a>
           </li>
           <li>
+            <a rel="noreferrer noopener" target="_self" href="./payment.html">
+              Way to Pay
+            </a>
+          </li>
+          <li>
             <a
               rel="noreferrer noopener"
               target="_self"
               href="./inspection-types.html"
             >
-              Inspection Types
+              Inspection
             </a>
           </li>
         </ul>
         <!-- Lang Toggler -->
         <div class="relative flex items-center gap-4">
-          <div class="max-md:hidden absolute -start-[180px] min-w-[160px]">
+          <div class="max-sm:hidden absolute -start-[180px] min-w-[160px]">
             <a
               rel="noreferrer noopener"
               target="_self"
@@ -232,38 +237,48 @@
       </nav>
       <!-- Extra Mobile Links -->
       <ul
-        class="container justify-center hidden gap-5 pt-2 pb-4 border-b max-xl:flex body *:hover:text-main *:transition-all *:duration-200 border-b-main/10"
+        class="container text-center justify-center hidden gap-5 pt-2 pb-4 border-b max-xl:flex body *:hover:text-main *:transition-all *:duration-200 border-b-main/10"
       >
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
             href="./index.html"
-            class="text-main"
             class="max-sm:text-sm"
           >
             Home
           </a>
         </li>
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
-            href="./pages/contact.html"
-            class="max-sm:text-sm"
+            href="./contact-us.html"
+            class="max-sm:text-sm text-main"
           >
             Get in Touch
           </a>
         </li>
-        <li>
+        <li class="max-sm:hidden">
           <a
             rel="noreferrer noopener"
             target="_self"
-            href="./pages/payment.html"
+            href="./inspection-types.html"
             class="max-sm:text-sm"
           >
-            How to Pay
+            Inspection
           </a>
+        </li>
+        <li class="sm:hidden">
+          <div class="min-w-[160px]">
+            <a
+              rel="noreferrer noopener"
+              target="_self"
+              href="./shipment.html"
+              class="relative px-4 py-3 overflow-hidden text-white transition-all border rounded-lg bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+              ><span class="relative">Shipment Finder</span></a
+            >
+          </div>
         </li>
       </ul>
     </header>
@@ -273,12 +288,12 @@
       <!-- Hero Section -->
       <section
         id="hero"
-        class="relative pb-20 pt-40 md:py-20 flex items-center justify-center text-center bg-[url(../assets/images/contact/header.png)] bg-no-repeat bg-cover bg-center"
+        class="relative pb-20 pt-32 flex items-center justify-center text-center bg-[url(../assets/images/contact/header.png)] bg-no-repeat bg-cover bg-center"
       >
         <div class="absolute top-0 size-full start-0 bg-black/80"></div>
         <div class="relative h-full">
           <div class="container pt-20 space-y-8 text-white">
-            <hgroup class="max-w-4xl space-y-4">
+            <hgroup data-aos="fade-down" class="max-w-4xl space-y-4">
               <h1 class="h1">We're Here to Help</h1>
               <p class="h4">
                 Our dedicated team is available 24/7 to assist you with any
@@ -286,16 +301,18 @@
                 providing fast, reliable support to businesses worldwide.
               </p>
             </hgroup>
-            <a
-              rel="noreferrer noopener"
-              target="_blank"
-              href="https://wa.me/201555943415?text=Hello%20From%20TijaraHub"
-              class="relative px-10 py-4 overflow-hidden text-white transition-all border rounded-lg sm:px-16 h4 bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
-            >
-              <span class="relative">
-                <i class="fa-solid fa-message me-2"></i> Send a Message
-              </span>
-            </a>
+            <div data-aos="fade-left">
+              <a
+                rel="noreferrer noopener"
+                target="_blank"
+                href="https://wa.me/201555943415?text=Hello%20From%20TijaraHub"
+                class="relative px-10 py-4 overflow-hidden text-white transition-all border rounded-lg sm:px-16 h4 bg-main hover:before:w-full before:transition-all hover:text-main border-main before:absolute before:h-full before:w-0 before:rounded-md before:duration-300 hover:before:bg-white before:start-0 before:top-0"
+              >
+                <span class="relative">
+                  <i class="fa-solid fa-message me-2"></i> Send a Message
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -306,7 +323,10 @@
         <!-- Get in Touch Section -->
         <section>
           <div class="container">
-            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+            <header
+              data-aos="fade-down"
+              class="space-y-4 text-center max-w-[768px] mx-auto"
+            >
               <h2 class="h2">Get in Touch</h2>
               <p class="h4">
                 Reach out to our team for assistance with your global trade
@@ -384,7 +404,10 @@
         <!-- Global Offices Section -->
         <section>
           <div class="container">
-            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+            <header
+              data-aos="fade-down"
+              class="space-y-4 text-center max-w-[768px] mx-auto"
+            >
               <h2 class="h2">Global Offices</h2>
               <p class="h4">
                 Our international presence allows us to serve businesses across
@@ -395,7 +418,7 @@
               class="grid grid-cols-1 gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
             >
               <div
-                data-aos="fade-up"
+                data-aos="fade-right"
                 class="rounded-xl group bg-gradient-to-br from-[rgba(6,130,65,0.1)] to-[rgba(20,20,20,0.1)] overflow-hidden"
               >
                 <div
@@ -552,7 +575,7 @@
                 </div>
               </div>
               <div
-                data-aos="fade-up"
+                data-aos="fade-left"
                 class="rounded-xl group bg-gradient-to-br from-[rgb(0,0,0,0.1)] to-[rgba(0,0,0,0.2)] overflow-hidden"
               >
                 <div
@@ -635,7 +658,10 @@
         <!-- Social Meida Section -->
         <section>
           <div class="container">
-            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+            <header
+              data-aos="fade-down"
+              class="space-y-4 text-center max-w-[768px] mx-auto"
+            >
               <h2 class="h2">Get Social</h2>
               <p class="h4">
                 Connect with us across social platforms For the latest updates,
@@ -646,6 +672,7 @@
               class="flex mt-10 flex-wrap justify-center items-center gap-5 *:size-40 *:rounded-lg *:flex *:items-center *:flex-col *:gap-2 *:justify-center *:cursor-pointer"
             >
               <a
+                data-aos="fade-right"
                 target="_blank"
                 href="https://www.linkedin.com/company/tijarahub"
                 class="bg-[#0076B2]/20 text-[#0076B2]"
@@ -654,6 +681,7 @@
                 <h4 class="h4">Linkedin</h4>
               </a>
               <a
+                data-aos="fade-up"
                 target="_blank"
                 href="https://www.facebook.com/Tijarahub1"
                 class="bg-[#1877F2]/20 text-[#1877F2]"
@@ -662,6 +690,7 @@
                 <h4 class="h4">Facebook</h4>
               </a>
               <a
+                data-aos="fade-left"
                 target="_blank"
                 href="https://www.youtube.com/@tijarahub"
                 class="text-[#ff0000] bg-[#ff0000]/20"
@@ -670,6 +699,7 @@
                 <h4 class="h4">YouTube</h4>
               </a>
               <a
+                data-aos="fade-right"
                 target="_blank"
                 href="https://www.instagram.com/tijarahub1/"
                 class="text-[#e1306c] bg-[#e1306c]/20"
@@ -678,6 +708,7 @@
                 <h4 class="h4">Instagram</h4>
               </a>
               <a
+                data-aos="fade-up"
                 target="_blank"
                 href="https://play.google.com/store/apps/details?id=com.TijaraHub"
                 class="text-[#34a853] bg-[#34a853]/20"
@@ -686,6 +717,7 @@
                 <h4 class="h4">Google Play</h4>
               </a>
               <a
+                data-aos="fade-left"
                 target="_blank"
                 href="https://apps.apple.com/eg/app/tijarahub/id6738108098"
                 class="text-[#2398f8] bg-[#2398f8]/20"
@@ -699,7 +731,10 @@
         <!-- Frequently Asked Questions Section -->
         <section>
           <div class="container">
-            <header class="space-y-4 text-center max-w-[768px] mx-auto">
+            <header
+              data-aos="fade-down"
+              class="space-y-4 text-center max-w-[768px] mx-auto"
+            >
               <h2 class="h2">Frequently Asked Questions</h2>
               <p class="h4">
                 Find quick answers to common questions about our platform and
@@ -707,6 +742,7 @@
               </p>
             </header>
             <form
+              data-aos="fade-left"
               id="faqs"
               class="relative max-w-[768px] mx-auto mt-10 overflow-hidden"
             >
@@ -732,7 +768,7 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer class="py-10 border-t border-main/10">
+    <footer data-aos="fade" class="py-10 border-t border-main/10">
       <div
         class="container flex flex-col justify-between gap-10 py-6 max-lg:items-center lg:flex-row"
       >
