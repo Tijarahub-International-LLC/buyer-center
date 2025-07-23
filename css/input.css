@@ -98,7 +98,25 @@ button {
 .active-bank-tab {
   @apply text-main font-bold border-b border-main transition-all duration-300
 }
+.logistic-card {
+  @apply transition-all duration-300 lg:flex-1 gap-4 p-5 rounded-lg text-center backdrop-blur-md lg:overflow-hidden bg-black/40 lg:hover:flex-3 lg:h-[250px] 
+}
+.logistic-card .price {
+  @apply text-gray-400 font-bold
+}
+.logistic-card .cta {
+  @apply p-3 rounded-lg bg-transparent border border-gray-400 w-full
+}
+.logistic-card.active {
+  @apply bg-black/20 
+}
+.logistic-card.active .price {
+  @apply text-main
+}
+.logistic-card.active .cta {
+  @apply border-main bg-main
+}
 
-.datepicker-dropdown {
-  z-index: 99999 !important;
+.flatpickr-calendar {
+  z-index: 999999 !important;
 }

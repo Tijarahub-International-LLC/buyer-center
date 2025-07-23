@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
     />
-    <title>TijaraHub | About Us</title>
+    <title>TijaraHub | AutoLogix</title>
     <meta
       name="description"
       content="TijaraHub links exporters to 9.5K+ wholesale buyers in GCC, Africa & beyond—no middlemen. Boost exports with AI tools, leads & flexible pricing."
@@ -27,18 +27,13 @@
       sizes="192x192"
       href="./assets/favicon_io/apple-touch-icon.png"
     />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- Flowbite -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- FlatPickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <!-- CSS Files -->
     <link href="./css/all.min.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
@@ -125,8 +120,8 @@
     ></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
-    <header class="absolute top-0 start-0 z-50 w-full text-white">
-      <nav class="flex px-6 md:px-16 py-4 md:py-8 justify-between items-center">
+    <header class="absolute top-0 z-50 w-full text-white start-0">
+      <nav class="flex items-center justify-between px-6 py-4 md:px-16 md:py-8">
         <a rel="noreferrer noopener" target="_self" href="./index.html">
           <img
             role="img"
@@ -184,98 +179,89 @@
     >
       <div class="absolute top-0 size-full start-0 bg-black/70"></div>
       <div class="relative size-full">
-        <div class="relative container" id="hero">
-          <section
-            class="text-center xl:pb-[calc(152px_/_2)] md:pb-[calc(320px_/_2)] pb-[calc(476px_/_2)]"
-          >
+        <div class="container relative" id="hero">
+          <section class="text-center">
             <img
-              class="max-h-80 mx-auto"
+              class="mx-auto max-h-80"
               src="./assets/images/shipment/container.png"
               alt="container"
             />
-            <hgroup class="text-white my-10">
-              <h1 class="h1">Customizable Logistics Solutions</h1>
-              <p class="h3 mt-4 max-w-[767px] mx-auto">
-                Access reliable, customizable logistics from approved providers.
+            <hgroup class="mt-10 space-y-2 text-white">
+              <h1 class="h1">AutoLogix</h1>
+              <p class="italic h3 !font-medium">Next-Gen Logistics, Today</p>
+              <p class="h4 max-w-[767px] mx-auto">
+                Get clear landed costs in seconds with AutoLogix, powered by AI
+                and connected to real-time freight rates. Make smarter import
+                decisions instantly.
               </p>
             </hgroup>
           </section>
-          <form
-            id="shipmentForm"
-            class="grid absolute start-0 container -translate-y-[calc(476px_/_2)] md:-translate-y-[calc(320px_/_2)] xl:-translate-y-[calc(152px_/_2)] bg-black/10 backdrop-blur-md p-10 rounded-3xl justify-center grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-5"
-          >
-            <!-- SHIPPING INFO CONTAINER -->
-            <div class="input_field">
-              <!-- Toggle Shipping Info Dropdown -->
-              <button
-                id="shippingInfoDropdownButton"
-                data-dropdown-toggle="shippingInfoDropdownMenu"
-                data-dropdown-placement="top"
-                class="relative inline-flex items-center px-5 py-5 font-medium text-center text-white transition-all duration-300 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none size-full"
-                type="button"
-              >
-                <span class="truncate">Shipping Info</span>
-                <svg
-                  class="absolute w-2.5 h-2.5 top-1/2 -translate-y-1/2 end-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
+          <div class="relative mt-10 space-y-10">
+            <form
+              id="shipmentForm"
+              class="container relative z-10 grid justify-center grid-cols-1 gap-5 p-6 md:p-10 bg-black/10 backdrop-blur-md rounded-3xl md:grid-cols-2 xl:grid-cols-5"
+            >
+              <!-- Proudct Information -->
+              <div class="relative inline-flex">
+                <button
+                  type="button"
+                  id="productInfo"
+                  class="flex items-center justify-between w-full p-4 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                  aria-label="Menu"
                 >
-                  <path
+                  <span class="truncate">Product Info</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
+                    class="size-4 min-w-4 min-h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
 
-              <div
-                id="shippingInfoDropdownMenu"
-                data-dropdown-placement="top"
-                aria-hidden="true"
-                class="max-w-[400px] z-50 hidden p-5 bg-black divide-y divide-gray-100 rounded-lg shadow-sm"
-              >
                 <div
-                  aria-labelledby="shippingInfoDropdownButton"
-                  class="flex flex-col *:flex-1 gap-5"
+                  role="menu"
+                  id="productInfoMenu"
+                  class="absolute hidden flex-col gap-y-4 md:min-w-[320px] p-4 w-full -translate-x-1/2 start-1/2 -translate-y-[80%] -top-[80%] z-50 rounded-lg bg-night shadow"
                 >
-                  <div class="input-container">
+                  <div class="inline-flex w-full">
                     <button
-                      id="productCategoryDropdownButton"
-                      data-dropdown-toggle="productCategoryDropdownMenu"
-                      data-dropdown-placement="top"
-                      class="relative inline-flex items-center px-5 py-5 font-medium text-center text-white transition-all duration-300 border border-gray-400 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none size-full"
                       type="button"
+                      id="productsList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
                     >
-                      <span class="truncate"> Product Category</span>
-
+                      <span>Products List</span>
                       <svg
-                        class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                        aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 10 6"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
                       >
                         <path
-                          stroke="currentColor"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
                         />
                       </svg>
                     </button>
 
-                    <!-- Product Category Dropdown Menu -->
                     <div
-                      id="productCategoryDropdownMenu"
-                      class="z-50 hidden bg-white rounded-lg shadow-sm"
+                      role="menu"
+                      id="productsListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow top-20 start-0"
                     >
-                      <div class="p-3">
-                        <label for="productCategorySearchInput" class="sr-only"
+                      <div class="input-container mb-1.5">
+                        <label for="productsListsSearch" class="sr-only"
                           >Search</label
                         >
                         <div class="relative">
@@ -300,19 +286,17 @@
                           </div>
                           <input
                             type="text"
-                            id="productCategorySearchInput"
-                            class="block w-full p-2 text-sm border border-gray-400 rounded-md ps-10 ring-0"
+                            id="productsListsSearch"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
                             placeholder="Search category"
                           />
                         </div>
                       </div>
                       <ul
-                        class="h-48 px-3 space-y-2 pb-3 overflow-y-auto text-sm product-category-list"
-                        aria-labelledby="productCategoryDropdownButton"
+                        class="space-y-1 overflow-y-auto products-list max-h-40"
                       ></ul>
                     </div>
                   </div>
-
                   <!-- Order Value Input -->
                   <div class="input-container">
                     <label for="orderValueInput" class="sr-only"
@@ -322,12 +306,11 @@
                       <input
                         type="number"
                         id="orderValueInput"
-                        value=""
-                        class="w-full py-4 border border-gray-400 rounded-md outline-none ps-8 ring-0 bg-white/10 backdrop-blur-md"
-                        placeholder="Order Value"
+                        class="w-full py-3 rounded-md outline-none peer disabled:text-gray-500 disabled:bg-white/5 ps-8 ring-0 bg-white/10 backdrop-blur-md"
+                        placeholder="Enter Order Value"
                       />
                       <div
-                        class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none"
+                        class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-disabled:text-gray-500"
                       >
                         <i class="fa-solid fa-dollar-sign"></i>
                       </div>
@@ -337,33 +320,35 @@
                   <!-- Container Size Toggle -->
                   <div class="input-container">
                     <div
-                      class="container-size text-sm font-medium text-center text-gray-400 rounded-lg shadow-sm sm:flex overflow-hidden"
+                      class="overflow-hidden text-sm font-medium text-center text-gray-400 rounded-lg shadow-sm container-size sm:flex"
                     >
                       <!-- 20ft Radio -->
-                      <label class="w-full cursor-pointer">
+                      <label class="w-full cursor-pointer" for="20ft">
                         <input
+                          id="20ft"
                           type="radio"
                           name="container-size"
                           value="20ft"
                           class="sr-only peer"
                         />
                         <span
-                          class="inline-block w-full p-4 text-lg max-sm:border-b sm:border-r border-gray-400 hover:bg-white/20 bg-white/5 backdrop-blur-md sm:rounded-s-lg peer-checked:bg-white/20 peer-checked:text-orange-400 transition"
+                          class="inline-block w-full p-3 text-lg transition border-gray-400 max-sm:border-b sm:border-r peer-checked:hover:bg-white/20 peer-disabled:hover:bg-white/5 hover:bg-white/20 bg-white/5 backdrop-blur-md sm:rounded-s-lg peer-checked:bg-white/20 peer-checked:text-main"
                         >
                           20ft
                         </span>
                       </label>
 
                       <!-- 40ft Radio -->
-                      <label class="w-full cursor-pointer">
+                      <label class="w-full cursor-pointer" for="40ft">
                         <input
+                          id="40ft"
                           type="radio"
                           name="container-size"
                           value="40ft"
                           class="sr-only peer"
                         />
                         <span
-                          class="inline-block w-full p-4 text-lg border-gray-400 bg-white/5 backdrop-blur-md hover:bg-white/20 focus:outline-none rounded-e-lg peer-checked:bg-white/20 peer-checked:text-orange-400 transition"
+                          class="inline-block w-full p-3 text-lg transition border-gray-400 bg-white/5 backdrop-blur-md peer-disabled:hover:bg-white/5 hover:bg-white/20 focus:outline-none rounded-e-lg peer-checked:bg-white/20 peer-checked:text-main"
                         >
                           40ft
                         </span>
@@ -374,7 +359,7 @@
                     <label
                       class="relative cursor-pointer inline-flex items-center w-full h-[60px]"
                     >
-                      <input class="peer hidden" id="toggle" type="checkbox" />
+                      <input class="hidden peer" id="toggle" type="checkbox" />
 
                       <!-- Toggle Track -->
                       <div
@@ -384,7 +369,7 @@
                       <!-- Centered Changing Label -->
                       <span
                         id="modeLabel"
-                        class="absolute left-1/2 -translate-x-1/2 text-sm font-bold peer-checked:text-white transition-all duration-300"
+                        class="absolute text-sm font-bold transition-all duration-300 -translate-x-1/2 left-1/2 peer-checked:text-white"
                       >
                         Dry
                       </span>
@@ -406,78 +391,67 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- LOCATION DROPDOWN CONTAINER -->
-            <div class="relative">
-              <!-- Toggle Button -->
-              <button
-                id="locationDropdownButton"
-                data-dropdown-toggle="locationDropdownMenu"
-                data-dropdown-placement="top"
-                class="relative inline-flex items-center px-5 py-5 font-medium text-center text-white transition-all duration-300 rounded-lg size-full bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
-                type="button"
-              >
-                <span>Location</span>
-                <svg
-                  class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
+              <!-- Location -->
+              <div class="relative inline-flex">
+                <button
+                  type="button"
+                  id="location"
+                  class="flex items-center justify-between w-full p-4 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                  aria-label="Menu"
                 >
-                  <path
+                  <span>Location</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
+                    class="size-4 min-w-4 min-h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
 
-              <!-- DROPDOWN MENU -->
-              <div
-                id="locationDropdownMenu"
-                class="z-50 min-w-[300px] max-w-[400px] hidden bg-black p-5 divide-y divide-gray-100 rounded-lg shadow-sm"
-              >
                 <div
-                  aria-labelledby="locationDropdownButton"
-                  class="flex flex-col gap-5 *:flex-1"
+                  role="menu"
+                  id="locationMenu"
+                  class="absolute hidden flex-col gap-y-4 md:min-w-[320px] p-4 w-full -translate-x-1/2 start-1/2 -translate-y-[67%] -top-[67%] z-50 rounded-lg bg-night shadow"
                 >
-                  <!-- COUNTRY SELECT -->
-                  <div class="input-container">
+                  <div class="inline-flex w-full">
                     <button
-                      id="countryDropdownButton"
-                      data-dropdown-toggle="countryDropdownMenu"
-                      data-dropdown-placement="top"
-                      class="relative inline-flex items-center w-full px-5 py-4 font-medium text-center text-white transition-all duration-300 border border-gray-400 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
                       type="button"
+                      id="countriesList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg disabled:!cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100 disabled:opacity-45 hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
                     >
                       <span>Country</span>
                       <svg
-                        class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                        aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 10 6"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
                       >
                         <path
-                          stroke="currentColor"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
                         />
                       </svg>
                     </button>
 
-                    <!-- COUNTRY MENU -->
                     <div
-                      id="countryDropdownMenu"
-                      class="z-50 hidden bg-white rounded-lg shadow-sm"
+                      role="menu"
+                      id="countriesListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow top-20 start-0"
                     >
-                      <div class="p-3">
-                        <label for="countrySearchInput" class="sr-only"
+                      <div class="input-container mb-1.5">
+                        <label for="countriesListSearch" class="sr-only"
                           >Search</label
                         >
                         <div class="relative">
@@ -502,53 +476,48 @@
                           </div>
                           <input
                             type="text"
-                            id="countrySearchInput"
-                            class="block w-full p-2 text-sm border border-gray-400 rounded-md ps-10 ring-0"
-                            placeholder="Search country"
+                            id="countriesListSearch"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                            placeholder="Search Country"
                           />
                         </div>
                       </div>
                       <ul
-                        class="h-48 px-3 pb-3 overflow-y-auto text-sm country-list"
-                        aria-labelledby="countryDropdownButton"
+                        class="space-y-1 overflow-y-auto countries-list max-h-40"
                       ></ul>
                     </div>
                   </div>
-
-                  <!-- PORT SELECT -->
-                  <div class="input-container">
+                  <div class="inline-flex w-full">
                     <button
-                      id="portDropdownButton"
-                      data-dropdown-toggle="portDropdownMenu"
-                      data-dropdown-placement="top"
-                      class="relative inline-flex items-center w-full px-5 py-4 font-medium text-center text-white transition-all duration-300 border border-gray-400 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
                       type="button"
+                      id="portsList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
                     >
                       <span>Port</span>
                       <svg
-                        class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                        aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 10 6"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
                       >
                         <path
-                          stroke="currentColor"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
                         />
                       </svg>
                     </button>
 
-                    <!-- PORT MENU -->
                     <div
-                      id="portDropdownMenu"
-                      class="z-50 hidden bg-white rounded-lg shadow-sm"
+                      role="menu"
+                      id="portsListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow bottom-20 start-0"
                     >
-                      <div class="p-3">
-                        <label for="portSearchInput" class="sr-only"
+                      <div class="input-container mb-1.5">
+                        <label for="portsListSearch" class="sr-only"
                           >Search</label
                         >
                         <div class="relative">
@@ -573,19 +542,14 @@
                           </div>
                           <input
                             type="text"
-                            id="portSearchInput"
-                            class="block w-full p-2 text-sm border border-gray-400 rounded-md ps-10 ring-0"
-                            placeholder="Search port"
+                            id="portsListSearch"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                            placeholder="Search Port"
                           />
                         </div>
                       </div>
-                      <ul
-                        class="h-48 px-3 pb-3 overflow-y-auto text-sm port-list"
-                        aria-labelledby="portDropdownButton"
-                      >
-                        <li
-                          class="country-notfound rounded-sm text-center p-2 hover:bg-gray-100"
-                        >
+                      <ul class="space-y-1 overflow-y-auto ports-list max-h-40">
+                        <li class="p-2 rounded-sm country-item">
                           Select Country First
                         </li>
                       </ul>
@@ -593,79 +557,68 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- DESTINATION DROPDOWN CONTAINER -->
-            <div class="relative">
-              <!-- Toggle Button -->
-              <button
-                id="destinationDropdownButton"
-                data-dropdown-toggle="destinationDropdownMenu"
-                data-dropdown-placement="top"
-                class="relative inline-flex items-center px-5 py-5 font-medium text-center text-white transition-all duration-300 rounded-lg size-full bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
-                type="button"
-              >
-                <span>Destination</span>
-                <svg
-                  class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
+              <!-- Destination -->
+              <div class="relative inline-flex">
+                <button
+                  type="button"
+                  id="destination"
+                  class="flex items-center justify-between w-full p-4 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                  aria-label="Menu"
                 >
-                  <path
+                  <span>Destination</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
+                    class="size-4 min-w-4 min-h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
 
-              <!-- DROPDOWN MENU -->
-              <div
-                id="destinationDropdownMenu"
-                class="z-10 min-w-[300px] max-w-[400px] hidden bg-black p-5 divide-y divide-gray-100 rounded-lg shadow-sm"
-              >
                 <div
-                  aria-labelledby="destinationDropdownButton"
-                  class="flex flex-col gap-5 *:flex-1"
+                  role="menu"
+                  id="destinationMenu"
+                  class="absolute hidden flex-col gap-y-4 md:min-w-[320px] p-4 w-full -translate-x-1/2 start-1/2 -translate-y-[75%] -top-[75%] z-50 rounded-lg bg-night shadow"
                 >
-                  <!-- DESTINATION COUNTRY SELECT -->
-                  <div class="input-container">
+                  <div class="inline-flex w-full">
                     <button
-                      id="destinationCountryDropdownButton"
-                      data-dropdown-toggle="destinationCountryDropdownMenu"
-                      data-dropdown-placement="top"
-                      class="relative inline-flex items-center w-full px-5 py-4 font-medium text-center text-white transition-all duration-300 border border-gray-400 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
                       type="button"
+                      id="destinationCountriesList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
                     >
                       <span>Country</span>
                       <svg
-                        class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                        aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 10 6"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
                       >
                         <path
-                          stroke="currentColor"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
                         />
                       </svg>
                     </button>
 
-                    <!-- COUNTRY MENU -->
                     <div
-                      id="destinationCountryDropdownMenu"
-                      class="z-50 hidden bg-white rounded-lg shadow-sm"
+                      role="menu"
+                      id="destinationCountriesListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow top-20 start-0"
                     >
-                      <div class="p-3">
+                      <div class="input-container mb-1.5">
                         <label
-                          for="destinationCountrySearchInput"
+                          for="destinationCountriesListSearch"
                           class="sr-only"
                           >Search</label
                         >
@@ -676,6 +629,7 @@
                             <svg
                               class="w-4 h-4"
                               aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 20 20"
                             >
@@ -690,53 +644,48 @@
                           </div>
                           <input
                             type="text"
-                            id="destinationCountrySearchInput"
-                            class="block w-full p-2 text-sm border border-gray-400 rounded-md ps-10 ring-0"
-                            placeholder="Search country"
+                            id="destinationCountriesList"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                            placeholder="Search Country"
                           />
                         </div>
                       </div>
                       <ul
-                        class="h-48 px-3 pb-3 overflow-y-auto text-sm destination-country-list"
-                        aria-labelledby="destinationCountryDropdownButton"
+                        class="space-y-1 overflow-y-auto destination-countries-list max-h-40"
                       ></ul>
                     </div>
                   </div>
-
-                  <!-- DESTINATION PORT SELECT -->
-                  <div class="input-container">
+                  <div class="inline-flex w-full">
                     <button
-                      id="destinationPortDropdownButton"
-                      data-dropdown-toggle="destinationPortDropdownMenu"
-                      data-dropdown-placement="top"
-                      class="relative inline-flex items-center w-full px-5 py-4 font-medium text-center text-white transition-all duration-300 border border-gray-400 rounded-lg bg-white/10 backdrop-blur-md hover:bg-white/20 focus:outline-none"
                       type="button"
+                      id="destinationPortsList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
                     >
                       <span>Port</span>
                       <svg
-                        class="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 end-3"
-                        aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 10 6"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
                       >
                         <path
-                          stroke="currentColor"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
                         />
                       </svg>
                     </button>
 
-                    <!-- PORT MENU -->
                     <div
-                      id="destinationPortDropdownMenu"
-                      class="z-50 hidden bg-white rounded-lg shadow-sm"
+                      role="menu"
+                      id="destinationPortsListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow bottom-32 start-0"
                     >
-                      <div class="p-3">
-                        <label for="destinationPortSearchInput" class="sr-only"
+                      <div class="input-container mb-1.5">
+                        <label for="destinationPortsListSearch" class="sr-only"
                           >Search</label
                         >
                         <div class="relative">
@@ -746,6 +695,7 @@
                             <svg
                               class="w-4 h-4"
                               aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 20 20"
                             >
@@ -760,19 +710,86 @@
                           </div>
                           <input
                             type="text"
-                            id="destinationPortSearchInput"
-                            class="block w-full p-2 text-sm border border-gray-400 rounded-md ps-10 ring-0"
-                            placeholder="Search port"
+                            id="destinationPortsListSearch"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                            placeholder="Search Port"
                           />
                         </div>
                       </div>
                       <ul
-                        class="h-48 px-3 pb-3 overflow-y-auto text-sm destination-port-list"
-                        aria-labelledby="destinationPortDropdownButton"
+                        class="space-y-1 overflow-y-auto destination-ports-list max-h-40"
                       >
-                        <li
-                          class="destination-country-notfound rounded-sm p-2 hover:bg-gray-100 text-center"
+                        <li class="p-2 rounded-sm country-item">
+                          Select Country First
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="inline-flex w-full">
+                    <button
+                      type="button"
+                      id="destinationCitiesList"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-white transition-all rounded-lg hover:bg-white/20 bg-white/10 backdrop-blur-md"
+                      aria-label="Menu"
+                    >
+                      <span>City</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      role="menu"
+                      id="destinationCitiesListMenu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow bottom-16 start-0"
+                    >
+                      <div class="input-container mb-1.5">
+                        <label for="destinationCitiesSearch" class="sr-only"
+                          >Search</label
                         >
+                        <div class="relative">
+                          <div
+                            class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                          >
+                            <svg
+                              class="w-4 h-4"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                              />
+                            </svg>
+                          </div>
+                          <input
+                            type="text"
+                            id="destinationCitiesSearch"
+                            class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                            placeholder="Search City"
+                          />
+                        </div>
+                      </div>
+                      <ul
+                        class="space-y-1 overflow-y-auto destination-cities-list max-h-40"
+                      >
+                        <li class="p-2 rounded-sm country-item">
                           Select Country First
                         </li>
                       </ul>
@@ -780,93 +797,60 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- DATEPICKER INPUT CONTAINER -->
-            <div class="relative">
-              <!-- Calendar Icon -->
-              <div
-                class="absolute top-1/2 -translate-y-1/2 z-[1] end-3 flex items-center justify-center ps-3 pointer-events-none"
-              >
-                <svg
-                  class="size-5 text-white/60"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                  />
-                </svg>
-              </div>
-
-              <!-- Datepicker Input -->
-              <input
-                type="text"
-                value=""
-                id="shipmentDate"
-                datepicker
-                datepicker-autohide
-                datepicker-orientation="top"
-                class="p-4 text-white transition-all duration-300 border-0 rounded-lg size-full bg-white/10 backdrop-blur-md ring-0 focus:outline-none placeholder:text-white placeholder:font-medium"
-                placeholder="Shipment date"
-              />
-            </div>
-            <div class="md:col-span-2 cursor-pointer xl:col-span-1">
-              <button
-                class="flex items-center justify-center w-full gap-2 px-4 py-6 text-white bg-main rounded-lg cursor-pointer"
-              >
-                Get Result
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-        <section
-          class="flex flex-wrap justify-center gap-5 cards-container xl:py-[calc(152px_/_2)] py-[calc(476px_/_2)] md:py-[calc(320px_/_2)]"
-        ></section>
-        <!-- <div class="container flow-root">
-          <dl
-            class="-my-3 divide-y divide-gray-200 text-white rounded border border-gray-200 text-sm"
-          >
-            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-              <dt class="font-medium">Product Image</dt>
-
-              <dd class="text-gray-400 sm:col-span-2">
-                <img
-                  class="size-20"
-                  src="https://ik.imagekit.io/tijarahub/images/detailed/56/TijaraHub__3_.webp"
-                  alt="Oasis - Soda Drink – 1000ml Multi-Flavors – Bulk - TijaraHub"
+              <!-- Shipment Date -->
+              <div class="relative inline-flex">
+                <label for="shipmentDate" class="sr-only">Select Date:</label>
+                <input
+                  type="text"
+                  class="w-full p-4 text-white rounded-lg outline-none placeholder:text-white bg-white/10"
+                  id="shipmentDate"
+                  placeholder="Shipment Date"
+                  name="shipmentDate"
                 />
-              </dd>
+                <i
+                  class="absolute text-gray-400 -translate-y-1/2 fa-solid fa-calendar end-4 top-1/2"
+                ></i>
+              </div>
+              <div class="cursor-pointer md:col-span-2 xl:col-span-1">
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-6 text-white rounded-lg cursor-pointer bg-main"
+                >
+                  Get Result
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </form>
+            <div
+              id="productInfoCard"
+              class="container relative hidden p-5 space-y-5 text-white shadow bg-white/10 backdrop-blur-md rounded-2xl"
+            >
+              <div
+                class="productInfoCardLoading flex items-center justify-center text-center p-10 text-main text-6xl"
+              >
+                <i class="fa-solid fa-spinner animate-spin"></i>
+              </div>
             </div>
-            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-              <dt class="font-medium">Product Name</dt>
-
-              <dd class="text-gray-400 sm:col-span-2">
-                Oasis - Soda Drink – 1000ml Multi-Flavors – Bulk - TijaraHub
-              </dd>
+            <!-- Shipment Cards Modal -->
+            <div
+              id="shipmentCardsModal"
+              class="absolute top-0 z-40 items-center justify-center hidden overflow-y-auto size-full start-0"
+            >
+              <div
+                class="container relative px-4 lg:px-20 py-20 bg-black/70 backdrop-blur-md rounded-xl"
+              >
+                <button
+                  id="closeShipmentModal"
+                  class="absolute z-50 flex items-center justify-center bg-white rounded-full size-10 text-main end-4 top-4"
+                >
+                  <i class="text-lg fa fa-solid fa-xmark"></i>
+                </button>
+                <section
+                  class="relative flex flex-wrap justify-center gap-5 text-white cards-container"
+                ></section>
+              </div>
             </div>
-
-            <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-              <dt class="font-medium">Order Value</dt>
-
-              <dd class="text-gray-400 sm:col-span-2">
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
-                    <p>20ft Container</p>
-                    <p>$1980+</p>
-                    <p>$2.27 (Per Shrink)</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <p>40ft Container</p>
-                    <p>$3960+</p>
-                    <p>$2.21 (Per Shrink)</p>
-                  </div>
-                </div>
-              </dd>
-            </div>
-          </dl>
-        </div> -->
+          </div>
+        </div>
       </div>
     </main>
     <!-- Footer -->
@@ -997,7 +981,7 @@
     <!-- Loading -->
     <div
       id="loading"
-      class="fixed top-0 z-[99999] flex-col items-center justify-center backdrop-blur-xs hidden bg-black/50 start-0 size-full"
+      class="fixed top-0 z-50 flex-col items-center justify-center hidden backdrop-blur-xs bg-black/50 start-0 size-full"
     >
       <div class="flex flex-row gap-2">
         <div
@@ -1023,14 +1007,14 @@
     <!-- VALIDATION MODAL -->
     <div
       id="validationModal"
-      class="fixed inset-0 hidden z-[999999] place-content-center bg-black/50 p-4"
+      class="fixed inset-0 z-40 hidden p-4 place-content-center bg-black/50"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modalTitle"
     >
       <div
         id="validationModalContent"
-        class="w-full mx-auto max-w-md rounded-lg bg-white/80 backdrop-blur-md p-6 shadow-lg"
+        class="w-full max-w-md p-6 mx-auto rounded-lg shadow-lg bg-white/80 backdrop-blur-md"
       >
         <div class="flex items-start justify-between">
           <h2 id="modalTitle" class="text-xl font-bold sm:text-2xl">
@@ -1039,38 +1023,472 @@
           <button
             type="button"
             id="closeModalBtn"
-            class="-me-4 size-6 flex items-center justify-center -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
+            class="flex items-center justify-center p-2 -mt-4 text-gray-400 transition-colors rounded-full -me-4 size-6 hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
             aria-label="Close"
           >
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
-        <div class="mt-4">
-          <p id="modalDesc" class="text-pretty text-gray-700 mb-2">
+        <div class="mt-4 space-y-4" id="valModalContent">
+          <p id="modalDesc" class="text-gray-700 text-pretty">
             Please complete the following required fields:
           </p>
           <ul id="invalidFieldsList" class="space-y-2 text-sm">
             <!-- Populated by JS -->
           </ul>
+          <form id="valShipmentForm" class="relative hidden space-y-3">
+            <div class="flex *:flex-1 gap-3">
+              <!-- LOCATION -->
+              <div class="relative">
+                <button
+                  type="button"
+                  id="location2"
+                  class="flex items-center justify-between w-full p-4 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                  aria-label="Menu"
+                >
+                  <span>Location</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4 min-w-4 min-h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  role="menu"
+                  id="location2Menu"
+                  class="absolute hidden flex-col gap-y-4 md:min-w-[320px] p-4 w-full -translate-x-1/2 start-1/2 -translate-y-[67%] -top-[67%] z-50 rounded-lg bg-white shadow"
+                >
+                  <div class="inline-flex w-full">
+                    <button
+                      type="button"
+                      id="countriesList2"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden text-night transition-all rounded-lg disabled:!cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100 disabled:opacity-45 hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                      aria-label="Menu"
+                    >
+                      <span>Country</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      role="menu"
+                      id="countriesList2Menu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden rounded-lg shadow bg-night top-20 start-0"
+                    >
+                      <div class="input-container mb-1.5">
+                        <label for="countriesList2Search" class="sr-only"
+                          >Search</label
+                        >
+                        <div class="relative">
+                          <div
+                            class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                          >
+                            <svg
+                              class="w-4 h-4"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                              />
+                            </svg>
+                          </div>
+                          <input
+                            type="text"
+                            id="countriesList2Search"
+                            class="block w-full p-3 text-sm bg-white border rounded-md outline-none border-night/40 ps-10"
+                            placeholder="Search Country"
+                          />
+                        </div>
+                      </div>
+                      <ul
+                        class="space-y-1 overflow-y-auto countries-list2 max-h-40"
+                      ></ul>
+                    </div>
+                  </div>
+                  <div class="inline-flex w-full">
+                    <button
+                      type="button"
+                      id="portsList2"
+                      class="flex items-center justify-between w-full px-4 py-3 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                      aria-label="Menu"
+                    >
+                      <span>Port</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-4 min-w-4 min-h-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      role="menu"
+                      id="portsList2Menu"
+                      class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow text-night bottom-20 start-0"
+                    >
+                      <div class="input-container mb-1.5">
+                        <label for="portsList2Search" class="sr-only"
+                          >Search</label
+                        >
+                        <div class="relative">
+                          <div
+                            class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                          >
+                            <svg
+                              class="w-4 h-4"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                              />
+                            </svg>
+                          </div>
+                          <input
+                            type="text"
+                            id="portsList2Search"
+                            class="block w-full p-3 text-sm bg-white border rounded-md outline-none border-night ps-10"
+                            placeholder="Search Port"
+                          />
+                        </div>
+                      </div>
+                      <ul
+                        class="space-y-1 overflow-y-auto ports-list2 max-h-40"
+                      >
+                        <li class="p-2 rounded-sm country-item">
+                          Select Country First
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Destination -->
+              <div class="relative">
+                <div>
+                  <button
+                    type="button"
+                    id="destination2"
+                    class="flex items-center justify-between w-full p-4 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                    aria-label="Menu"
+                  >
+                    <span>Destination</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-4 min-w-4 min-h-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    role="menu"
+                    id="destination2Menu"
+                    class="absolute hidden flex-col gap-y-4 md:min-w-[320px] p-4 w-full -translate-x-1/2 start-1/2 -translate-y-[75%] -top-[75%] z-50 rounded-lg bg-white text-night shadow"
+                  >
+                    <div class="inline-flex w-full">
+                      <button
+                        type="button"
+                        id="destinationCountriesList2"
+                        class="flex items-center justify-between w-full px-4 py-3 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                        aria-label="Menu"
+                      >
+                        <span>Country</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 min-w-4 min-h-4"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                          />
+                        </svg>
+                      </button>
+
+                      <div
+                        role="menu"
+                        id="destinationCountriesList2Menu"
+                        class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow text-night top-20 start-0"
+                      >
+                        <div class="input-container mb-1.5">
+                          <label
+                            for="destinationCountriesList2Search"
+                            class="sr-only"
+                            >Search</label
+                          >
+                          <div class="relative">
+                            <div
+                              class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                            >
+                              <svg
+                                class="w-4 h-4"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                />
+                              </svg>
+                            </div>
+                            <input
+                              type="text"
+                              id="destinationCountriesList2Search"
+                              class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                              placeholder="Search Country"
+                            />
+                          </div>
+                        </div>
+                        <ul
+                          class="space-y-1 overflow-y-auto destination-countries-list2 max-h-40"
+                        ></ul>
+                      </div>
+                    </div>
+                    <div class="inline-flex w-full">
+                      <button
+                        type="button"
+                        id="destinationPortsList2"
+                        class="flex items-center justify-between w-full px-4 py-3 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                        aria-label="Menu"
+                      >
+                        <span>Port</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 min-w-4 min-h-4"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                          />
+                        </svg>
+                      </button>
+
+                      <div
+                        role="menu"
+                        id="destinationPortsList2Menu"
+                        class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow text-night bottom-32 start-0"
+                      >
+                        <div class="input-container mb-1.5">
+                          <label
+                            for="destinationPortsList2Search"
+                            class="sr-only"
+                            >Search</label
+                          >
+                          <div class="relative">
+                            <div
+                              class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                            >
+                              <svg
+                                class="w-4 h-4"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                />
+                              </svg>
+                            </div>
+                            <input
+                              type="text"
+                              id="destinationPortsList2Search"
+                              class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                              placeholder="Search Port"
+                            />
+                          </div>
+                        </div>
+                        <ul
+                          class="space-y-1 overflow-y-auto destination-ports-list2 max-h-40"
+                        >
+                          <li class="p-2 rounded-sm country-item">
+                            Select Country First
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="inline-flex w-full">
+                      <button
+                        type="button"
+                        id="destinationCitiesList2"
+                        class="flex items-center justify-between w-full px-4 py-3 overflow-hidden transition-all rounded-lg text-night hover:bg-night/20 bg-night/10 backdrop-blur-md"
+                        aria-label="Menu"
+                      >
+                        <span>City</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 min-w-4 min-h-4"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                          />
+                        </svg>
+                      </button>
+
+                      <div
+                        role="menu"
+                        id="destinationCitiesList2Menu"
+                        class="absolute z-50 flex-col hidden w-full gap-2 p-3 overflow-hidden bg-white rounded-lg shadow text-night bottom-16 start-0"
+                      >
+                        <div class="input-container mb-1.5">
+                          <label
+                            for="destinationCitiesList2Search"
+                            class="sr-only"
+                            >Search</label
+                          >
+                          <div class="relative">
+                            <div
+                              class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+                            >
+                              <svg
+                                class="w-4 h-4"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                />
+                              </svg>
+                            </div>
+                            <input
+                              type="text"
+                              id="destinationCitiesList2Search"
+                              class="block w-full p-3 text-sm bg-white border border-gray-400 rounded-md outline-none ps-10"
+                              placeholder="Search City"
+                            />
+                          </div>
+                        </div>
+                        <ul
+                          class="space-y-1 overflow-y-auto destination-cities-list2 max-h-40"
+                        >
+                          <li class="p-2 rounded-sm country-item">
+                            Select Country First
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <label for="shipmentDate2" class="sr-only">Select Date:</label>
+              <input
+                type="text"
+                class="w-full p-4 rounded-lg outline-none text-night placeholder:text-night bg-night/10 backdrop-blur-md"
+                id="shipmentDate2"
+                placeholder="Shipment Date"
+                name="shipmentDate2"
+              />
+              <i
+                class="absolute text-gray-400 -translate-y-1/2 fa-solid fa-calendar end-4 top-1/2"
+              ></i>
+            </div>
+            <button class="w-full p-4 text-white rounded-lg bg-main">
+              Get Result
+            </button>
+          </form>
         </div>
 
-        <div class="mt-6 flex justify-end gap-2">
+        <div class="flex justify-end gap-2 mt-6">
           <button
             type="button"
             id="cancelModalBtn"
-            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+            class="px-4 py-2 text-sm font-medium text-gray-700 transition-colors bg-gray-100 rounded hover:bg-gray-200"
           >
             Okay
           </button>
         </div>
       </div>
     </div>
+
+    <!-- FlatPickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Flowbite -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="./js/index.js" type="module" defer></script>
   </body>
 </html>
