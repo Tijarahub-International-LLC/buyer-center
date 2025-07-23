@@ -335,94 +335,6 @@ document.body.addEventListener("click", (e) => {
 })
 
 
-
-// Sliders
-
-if (location.pathname !== "/shipv3.html") {
-  new Swiper(".servicesSwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    initialSlide: 4,
-    loop: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 20,
-      stretch: 0,
-      depth: 320,
-      modifier: 1,
-      slideShadows: false,
-    },
-    pagination: false,
-  });
-
-  const categoriesSwiper = new Swiper(".categoriesSwiper", {
-    spaceBetween: 0,
-    freeMode: true,
-    pagination: false,
-    autoplay: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
-      620: {
-        slidesPerView: 3,
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 10,
-      },
-      1024: {
-        slidesPerView: 8,
-        spaceBetween: 10,
-      },
-    }, navigation: {
-      nextEl: ".swiper-button-next.categoriesSwiper",
-      prevEl: ".swiper-button-prev.categoriesSwiper",
-    },
-  });
-
-
-  const agentsSwiper = new Swiper(".agentsSwiper", {
-    spaceBetween: 0,
-    freeMode: true,
-    pagination: false,
-    autoplay: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
-      620: {
-        slidesPerView: 3,
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 6,
-        spaceBetween: 30,
-      },
-    }, navigation: {
-      nextEl: ".swiper-button-next.categoriesSwiper",
-      prevEl: ".swiper-button-prev.categoriesSwiper",
-    },
-  });
-}
-
-
 // ========== Payment Page =============//
 let currentbanks = banks.filter((bank) => bank.cat === "uae");
 const banksContainer = document.querySelector("#banks-container")
@@ -2005,3 +1917,94 @@ async function getCalcData(requestBody) {
 //   unitName: "Piece",
 //   unitsInProduct: 6.000
 // })
+
+
+
+
+
+
+// Sliders
+
+if (location.pathname !== "/shipment.html") {
+  new Swiper(".servicesSwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    initialSlide: 4,
+    loop: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 20,
+      stretch: 0,
+      depth: 320,
+      modifier: 1,
+      slideShadows: false,
+    },
+    pagination: false,
+  });
+
+  const categoriesSwiper = new Swiper(".categoriesSwiper", {
+    spaceBetween: 0,
+    freeMode: true,
+    pagination: false,
+    autoplay: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      620: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 8,
+        spaceBetween: 10,
+      },
+    }, navigation: {
+      nextEl: ".swiper-button-next.categoriesSwiper",
+      prevEl: ".swiper-button-prev.categoriesSwiper",
+    },
+  });
+
+
+  const agentsSwiper = new Swiper(".agentsSwiper", {
+    spaceBetween: 0,
+    freeMode: true,
+    pagination: false,
+    autoplay: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      620: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      },
+    }, navigation: {
+      nextEl: ".swiper-button-next.categoriesSwiper",
+      prevEl: ".swiper-button-prev.categoriesSwiper",
+    },
+  });
+}
